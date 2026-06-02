@@ -1,0 +1,105 @@
+{
+  "build": "hc8b0dd6_1",
+  "build_number": 1,
+  "channel": "https://repo.anaconda.com/pkgs/main/osx-64",
+  "constrains": [],
+  "depends": [
+    "__osx >=10.15",
+    "ncurses >=6.4,<7.0a0",
+    "readline >=8.0,<9.0a0",
+    "zlib >=1.2.13,<1.3.0a0",
+    "zlib >=1.2.13,<2.0a0"
+  ],
+  "extracted_package_dir": "/Users/apple/anaconda3/pkgs/sqlite-3.50.2-hc8b0dd6_1",
+  "features": "",
+  "files": [
+    "bin/sqlite3",
+    "include/sqlite3.h",
+    "include/sqlite3ext.h",
+    "lib/libsqlite3.0.dylib",
+    "lib/libsqlite3.3.50.2.dylib",
+    "lib/libsqlite3.dylib",
+    "lib/pkgconfig/sqlite3.pc",
+    "share/man/man1/sqlite3.1"
+  ],
+  "fn": "sqlite-3.50.2-hc8b0dd6_1.conda",
+  "legacy_bz2_md5": "31cf95da9abaa8b074c16cc23fa27537",
+  "license": "blessing",
+  "license_family": "Other",
+  "link": {
+    "source": "/Users/apple/anaconda3/pkgs/sqlite-3.50.2-hc8b0dd6_1",
+    "type": 1
+  },
+  "md5": "c1036f04e8d13c68a27fe9da140e34f3",
+  "name": "sqlite",
+  "package_tarball_full_path": "/Users/apple/anaconda3/pkgs/sqlite-3.50.2-hc8b0dd6_1.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/sqlite3",
+        "path_type": "hardlink",
+        "sha256": "f47d2ec66185b84e4d795d71191e7680b082c0ba7175bbdff6223082956c817b",
+        "sha256_in_prefix": "f47d2ec66185b84e4d795d71191e7680b082c0ba7175bbdff6223082956c817b",
+        "size_in_bytes": 1824664
+      },
+      {
+        "_path": "include/sqlite3.h",
+        "path_type": "hardlink",
+        "sha256": "7db44ac3e95c465c30eea8d45d81474c7cda49ab76e8a681e752e535d1560f2e",
+        "sha256_in_prefix": "7db44ac3e95c465c30eea8d45d81474c7cda49ab76e8a681e752e535d1560f2e",
+        "size_in_bytes": 661946
+      },
+      {
+        "_path": "include/sqlite3ext.h",
+        "path_type": "hardlink",
+        "sha256": "9a91de0d5e5ccc04ec59041275c67972d6f8894f7543a10033e387b69987beb5",
+        "sha256_in_prefix": "9a91de0d5e5ccc04ec59041275c67972d6f8894f7543a10033e387b69987beb5",
+        "size_in_bytes": 38321
+      },
+      {
+        "_path": "lib/libsqlite3.0.dylib",
+        "path_type": "softlink",
+        "sha256": "cd523d51baef2a3c86ab7f7cdc6efb4f45c71eef277efeaa99fa0770640fe8a7",
+        "size_in_bytes": 1508356
+      },
+      {
+        "_path": "lib/libsqlite3.3.50.2.dylib",
+        "path_type": "hardlink",
+        "sha256": "cd523d51baef2a3c86ab7f7cdc6efb4f45c71eef277efeaa99fa0770640fe8a7",
+        "sha256_in_prefix": "cd523d51baef2a3c86ab7f7cdc6efb4f45c71eef277efeaa99fa0770640fe8a7",
+        "size_in_bytes": 1508356
+      },
+      {
+        "_path": "lib/libsqlite3.dylib",
+        "path_type": "softlink",
+        "sha256": "cd523d51baef2a3c86ab7f7cdc6efb4f45c71eef277efeaa99fa0770640fe8a7",
+        "size_in_bytes": 1508356
+      },
+      {
+        "_path": "lib/pkgconfig/sqlite3.pc",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_a0rg690p71/croot/sqlite_1752773582000/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho",
+        "sha256": "c1e127f7aca10b94def88768b1c5c37b2fa4620d0ee606dda7a860b986b787c6",
+        "sha256_in_prefix": "8bb5ec6b748d602651516021b803b64ee5dcc30f56ab23c5f99fe1b067f3f5a9",
+        "size_in_bytes": 513
+      },
+      {
+        "_path": "share/man/man1/sqlite3.1",
+        "path_type": "hardlink",
+        "sha256": "161127f79ba85a39c43520a33174d817a2465159ddf034aaddd4a696fe133564",
+        "sha256_in_prefix": "161127f79ba85a39c43520a33174d817a2465159ddf034aaddd4a696fe133564",
+        "size_in_bytes": 4340
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "fe376ff914ca3eb10ed1a8f2be3e83486fd4636d42b4188d66e3685b52bb007c",
+  "size": 1145428,
+  "subdir": "osx-64",
+  "timestamp": 1752773664751,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/osx-64/sqlite-3.50.2-hc8b0dd6_1.conda",
+  "version": "3.50.2"
+}

@@ -1,0 +1,134 @@
+{
+  "build": "pyhd3eb1b0_1",
+  "build_number": 1,
+  "channel": "https://repo.anaconda.com/pkgs/main/noarch",
+  "constrains": [],
+  "depends": [
+    "python"
+  ],
+  "extracted_package_dir": "/Users/apple/anaconda3/pkgs/backcall-0.2.0-pyhd3eb1b0_1",
+  "features": "",
+  "files": [
+    "lib/python3.12/site-packages/backcall-0.2.0.dist-info/INSTALLER",
+    "lib/python3.12/site-packages/backcall-0.2.0.dist-info/METADATA",
+    "lib/python3.12/site-packages/backcall-0.2.0.dist-info/RECORD",
+    "lib/python3.12/site-packages/backcall-0.2.0.dist-info/REQUESTED",
+    "lib/python3.12/site-packages/backcall-0.2.0.dist-info/WHEEL",
+    "lib/python3.12/site-packages/backcall-0.2.0.dist-info/direct_url.json",
+    "lib/python3.12/site-packages/backcall-0.2.0.dist-info/licenses/LICENSE",
+    "lib/python3.12/site-packages/backcall/__init__.py",
+    "lib/python3.12/site-packages/backcall/_signatures.py",
+    "lib/python3.12/site-packages/backcall/backcall.py",
+    "lib/python3.12/site-packages/backcall/__pycache__/__init__.cpython-312.pyc",
+    "lib/python3.12/site-packages/backcall/__pycache__/_signatures.cpython-312.pyc",
+    "lib/python3.12/site-packages/backcall/__pycache__/backcall.cpython-312.pyc"
+  ],
+  "fn": "backcall-0.2.0-pyhd3eb1b0_1.conda",
+  "legacy_bz2_md5": "5d921efd895414d6dd2b7af1cc81a557",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "/Users/apple/anaconda3/pkgs/backcall-0.2.0-pyhd3eb1b0_1",
+    "type": 1
+  },
+  "md5": "77e722fce21d912bd4412ed73bf19678",
+  "name": "backcall",
+  "noarch": "python",
+  "package_tarball_full_path": "/Users/apple/anaconda3/pkgs/backcall-0.2.0-pyhd3eb1b0_1.conda",
+  "package_type": "noarch_python",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "site-packages/backcall-0.2.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "site-packages/backcall-0.2.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "252d0da1c8ddd0bce9af56cc8d4035dc2059230ae1116ab5196c4841b9f08822",
+        "sha256_in_prefix": "252d0da1c8ddd0bce9af56cc8d4035dc2059230ae1116ab5196c4841b9f08822",
+        "size_in_bytes": 1971
+      },
+      {
+        "_path": "site-packages/backcall-0.2.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "702cb96c2cefc9570d9f6ab52ced2569e7e5065dc29e1ae2239411d48a081520",
+        "sha256_in_prefix": "702cb96c2cefc9570d9f6ab52ced2569e7e5065dc29e1ae2239411d48a081520",
+        "size_in_bytes": 973
+      },
+      {
+        "_path": "site-packages/backcall-0.2.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "site-packages/backcall-0.2.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "0f2b7a4817da6ac584954ad44649275450190c7493c318373da4f36bb4526e46",
+        "sha256_in_prefix": "0f2b7a4817da6ac584954ad44649275450190c7493c318373da4f36bb4526e46",
+        "size_in_bytes": 100
+      },
+      {
+        "_path": "site-packages/backcall-0.2.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "6dbfa45a623f7a082469edb12d2c81cfc188a7382be64b5559d6d9373fca6a7c",
+        "sha256_in_prefix": "6dbfa45a623f7a082469edb12d2c81cfc188a7382be64b5559d6d9373fca6a7c",
+        "size_in_bytes": 86
+      },
+      {
+        "_path": "site-packages/backcall-0.2.0.dist-info/licenses/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "d422f8ce77312733c07f5fec8ccbe61d58d539774f7a66f37e4bc54740d86020",
+        "sha256_in_prefix": "d422f8ce77312733c07f5fec8ccbe61d58d539774f7a66f37e4bc54740d86020",
+        "size_in_bytes": 1490
+      },
+      {
+        "_path": "site-packages/backcall/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "bfd61414c08da701e97f2f4cfac7d50c861a7fed0c72823e012fb78fdf111b43",
+        "sha256_in_prefix": "bfd61414c08da701e97f2f4cfac7d50c861a7fed0c72823e012fb78fdf111b43",
+        "size_in_bytes": 213
+      },
+      {
+        "_path": "site-packages/backcall/_signatures.py",
+        "path_type": "hardlink",
+        "sha256": "cb7a71fdf4c5559332f3e9b04cebd2c6538e68b51d1c9985dfb93b46ff4d5eed",
+        "sha256_in_prefix": "cb7a71fdf4c5559332f3e9b04cebd2c6538e68b51d1c9985dfb93b46ff4d5eed",
+        "size_in_bytes": 29847
+      },
+      {
+        "_path": "site-packages/backcall/backcall.py",
+        "path_type": "hardlink",
+        "sha256": "0d0ccd5efe3b668a1af184d7e41135f51b8bc788f2ac4b105112531e1aa1738f",
+        "sha256_in_prefix": "0d0ccd5efe3b668a1af184d7e41135f51b8bc788f2ac4b105112531e1aa1738f",
+        "size_in_bytes": 3752
+      },
+      {
+        "_path": "lib/python3.12/site-packages/backcall/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.12/site-packages/backcall/__pycache__/_signatures.cpython-312.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.12/site-packages/backcall/__pycache__/backcall.cpython-312.pyc",
+        "path_type": "pyc_file"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "461b621811f25f5d2ebb2f8d01b3da9fdb59b62650d35f7a7036c82a7709d3ef",
+  "size": 15078,
+  "subdir": "noarch",
+  "timestamp": 1761744940846,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/noarch/backcall-0.2.0-pyhd3eb1b0_1.conda",
+  "version": "0.2.0"
+}

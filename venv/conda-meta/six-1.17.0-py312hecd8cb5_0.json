@@ -1,0 +1,117 @@
+{
+  "build": "py312hecd8cb5_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/osx-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.12,<3.13.0a0"
+  ],
+  "extracted_package_dir": "/Users/apple/anaconda3/pkgs/six-1.17.0-py312hecd8cb5_0",
+  "features": "",
+  "files": [
+    "lib/python3.12/site-packages/__pycache__/six.cpython-312.pyc",
+    "lib/python3.12/site-packages/six-1.17.0.dist-info/INSTALLER",
+    "lib/python3.12/site-packages/six-1.17.0.dist-info/LICENSE",
+    "lib/python3.12/site-packages/six-1.17.0.dist-info/METADATA",
+    "lib/python3.12/site-packages/six-1.17.0.dist-info/RECORD",
+    "lib/python3.12/site-packages/six-1.17.0.dist-info/REQUESTED",
+    "lib/python3.12/site-packages/six-1.17.0.dist-info/WHEEL",
+    "lib/python3.12/site-packages/six-1.17.0.dist-info/direct_url.json",
+    "lib/python3.12/site-packages/six-1.17.0.dist-info/top_level.txt",
+    "lib/python3.12/site-packages/six.py"
+  ],
+  "fn": "six-1.17.0-py312hecd8cb5_0.conda",
+  "legacy_bz2_md5": "08d2cbd3bd2f128275b953f914f78c1c",
+  "license": "MIT",
+  "license_family": "MIT",
+  "link": {
+    "source": "/Users/apple/anaconda3/pkgs/six-1.17.0-py312hecd8cb5_0",
+    "type": 1
+  },
+  "md5": "aadd782bc06426887ae0835eedd98ceb",
+  "name": "six",
+  "package_tarball_full_path": "/Users/apple/anaconda3/pkgs/six-1.17.0-py312hecd8cb5_0.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python3.12/site-packages/__pycache__/six.cpython-312.pyc",
+        "path_type": "hardlink",
+        "sha256": "acd160dd2642d673789002b190ced5155234f2a5f94ea266e29b9aaf8c5d728a",
+        "sha256_in_prefix": "acd160dd2642d673789002b190ced5155234f2a5f94ea266e29b9aaf8c5d728a",
+        "size_in_bytes": 41304
+      },
+      {
+        "_path": "lib/python3.12/site-packages/six-1.17.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "lib/python3.12/site-packages/six-1.17.0.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0",
+        "sha256_in_prefix": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0",
+        "size_in_bytes": 1066
+      },
+      {
+        "_path": "lib/python3.12/site-packages/six-1.17.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "bf015b64d712d88de81381657cb3e5bb8164d44af9e7700482aa1adb6052a310",
+        "sha256_in_prefix": "bf015b64d712d88de81381657cb3e5bb8164d44af9e7700482aa1adb6052a310",
+        "size_in_bytes": 1815
+      },
+      {
+        "_path": "lib/python3.12/site-packages/six-1.17.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "e2da1afe52cc4f8c9ee88725318fb4b12e7ff56a5a189aaf75e768708f28cfb2",
+        "sha256_in_prefix": "e2da1afe52cc4f8c9ee88725318fb4b12e7ff56a5a189aaf75e768708f28cfb2",
+        "size_in_bytes": 739
+      },
+      {
+        "_path": "lib/python3.12/site-packages/six-1.17.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.12/site-packages/six-1.17.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "f479b6381fa3d5070252af4982e86dedac8620864145374e5c3d6a83d70280f3",
+        "sha256_in_prefix": "f479b6381fa3d5070252af4982e86dedac8620864145374e5c3d6a83d70280f3",
+        "size_in_bytes": 109
+      },
+      {
+        "_path": "lib/python3.12/site-packages/six-1.17.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "d61585bf1a7a4c734ea1fb2694e6fcaf57e5e84fe09581b50c83a19971adc03d",
+        "sha256_in_prefix": "d61585bf1a7a4c734ea1fb2694e6fcaf57e5e84fe09581b50c83a19971adc03d",
+        "size_in_bytes": 134
+      },
+      {
+        "_path": "lib/python3.12/site-packages/six-1.17.0.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "fe2547fe2604b445e70fc9d819062960552f9145bdb043b51986e478a4806a2b",
+        "sha256_in_prefix": "fe2547fe2604b445e70fc9d819062960552f9145bdb043b51986e478a4806a2b",
+        "size_in_bytes": 4
+      },
+      {
+        "_path": "lib/python3.12/site-packages/six.py",
+        "path_type": "hardlink",
+        "sha256": "c51c91f703d3d4b3696c923cb5fec213e05e75d9215393befac7f2fa6a3904df",
+        "sha256_in_prefix": "c51c91f703d3d4b3696c923cb5fec213e05e75d9215393befac7f2fa6a3904df",
+        "size_in_bytes": 34703
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "f1ff82720750872496418078f2209eb05d2eb6bc1768645612c2cc68ec6d904d",
+  "size": 39194,
+  "subdir": "osx-64",
+  "timestamp": 1744271631709,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/osx-64/six-1.17.0-py312hecd8cb5_0.conda",
+  "version": "1.17.0"
+}

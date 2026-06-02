@@ -1,0 +1,58 @@
+==> 2026-04-16 11:57:47 <==
+# cmd: /Users/apple/anaconda3/bin/conda create -p venv python=3.12
+# conda version: 23.3.1
++defaults/noarch::pip-26.0.1-pyhc872135_1
++defaults/noarch::tzdata-2026a-he532380_0
++defaults/osx-64::bzip2-1.0.8-h6c40b1e_6
++defaults/osx-64::ca-certificates-2025.7.15-hecd8cb5_0
++defaults/osx-64::expat-2.7.1-h6d0c2b6_0
++defaults/osx-64::libcxx-19.1.7-haebbb44_3
++defaults/osx-64::libffi-3.4.4-hecd8cb5_1
++defaults/osx-64::ncurses-6.5-h923df54_0
++defaults/osx-64::openssl-3.0.17-hee2dfae_0
++defaults/osx-64::python-3.12.11-he8d2d4c_0
++defaults/osx-64::readline-8.3-h49f2429_0
++defaults/osx-64::setuptools-78.1.1-py312hecd8cb5_0
++defaults/osx-64::sqlite-3.50.2-hc8b0dd6_1
++defaults/osx-64::tk-8.6.15-h3a5a201_0
++defaults/osx-64::wheel-0.45.1-py312hecd8cb5_0
++defaults/osx-64::xz-5.6.4-h46256e1_1
++defaults/osx-64::zlib-1.2.13-h4b97444_1
+# update specs: ['python=3.12']
+==> 2026-04-16 12:12:09 <==
+# cmd: /Users/apple/anaconda3/bin/conda install ipykernel
+# conda version: 23.3.1
++defaults/noarch::backcall-0.2.0-pyhd3eb1b0_1
++defaults/noarch::decorator-5.1.1-pyhd3eb1b0_0
++defaults/noarch::executing-0.8.3-pyhd3eb1b0_0
++defaults/noarch::pickleshare-0.7.5-pyhd3eb1b0_1003
++defaults/noarch::ptyprocess-0.7.0-pyhd3eb1b0_3
++defaults/noarch::pure_eval-0.2.2-pyhd3eb1b0_0
++defaults/noarch::stack_data-0.2.0-pyhd3eb1b0_0
++defaults/osx-64::appnope-0.1.4-py312hecd8cb5_0
++defaults/osx-64::asttokens-3.0.0-py312hecd8cb5_0
++defaults/osx-64::comm-0.2.1-py312hecd8cb5_0
++defaults/osx-64::debugpy-1.8.11-py312h6d0c2b6_0
++defaults/osx-64::ipykernel-6.29.5-py312hecd8cb5_1
++defaults/osx-64::ipython-8.15.0-py312hecd8cb5_0
++defaults/osx-64::jedi-0.19.2-py312hecd8cb5_0
++defaults/osx-64::jupyter_client-8.6.3-py312hecd8cb5_0
++defaults/osx-64::jupyter_core-5.8.1-py312hecd8cb5_0
++defaults/osx-64::libsodium-1.0.18-h1de35cc_0
++defaults/osx-64::matplotlib-inline-0.1.6-py312hecd8cb5_0
++defaults/osx-64::nest-asyncio-1.6.0-py312hecd8cb5_0
++defaults/osx-64::packaging-25.0-py312hecd8cb5_0
++defaults/osx-64::parso-0.8.4-py312hecd8cb5_0
++defaults/osx-64::pexpect-4.9.0-py312hecd8cb5_0
++defaults/osx-64::platformdirs-4.3.7-py312hecd8cb5_0
++defaults/osx-64::prompt-toolkit-3.0.43-py312hecd8cb5_0
++defaults/osx-64::psutil-5.9.0-py312h46256e1_1
++defaults/osx-64::pygments-2.19.1-py312hecd8cb5_0
++defaults/osx-64::python-dateutil-2.9.0post0-py312hecd8cb5_2
++defaults/osx-64::pyzmq-26.2.0-py312h6d0c2b6_0
++defaults/osx-64::six-1.17.0-py312hecd8cb5_0
++defaults/osx-64::tornado-6.5.1-py312h46256e1_0
++defaults/osx-64::traitlets-5.14.3-py312hecd8cb5_0
++defaults/osx-64::wcwidth-0.2.13-py312hecd8cb5_0
++defaults/osx-64::zeromq-4.3.5-hcec6c5f_0
+# update specs: ['ipykernel']

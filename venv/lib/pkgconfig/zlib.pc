@@ -1,0 +1,13 @@
+prefix=/Users/apple/Desktop/Data Science/venv
+exec_prefix=/Users/apple/Desktop/Data Science/venv
+libdir=/Users/apple/Desktop/Data Science/venv/lib
+sharedlibdir=/Users/apple/Desktop/Data Science/venv/lib
+includedir=/Users/apple/Desktop/Data Science/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
