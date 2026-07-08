@@ -1,0 +1,21 @@
+student_id,name,age,gender,major,gpa,attendance_pct,city,enrollment_year,scholarship
+S001,Alice Johnson,18,F,Computer Science,3.8,95,New York,2022,Yes
+S002,Bob Smith,19,M,Mathematics,3.5,88,Boston,2021,No
+S003,Charlie Brown,20,M,Physics,3.2,92,Chicago,2023,Yes
+S004,Diana Prince,21,F,Biology,3.9,97,Seattle,2022,No
+S005,Ethan Hunt,19,M,Chemistry,2.8,85,Austin,2021,
+S006,Fiona Green,22,F,Economics,3.6,90,Denver,2023,Yes
+S007,George Miller,18,M,Psychology,,78,Miami,2022,No
+S008,Hannah Lee,20,F,Engineering,3.4,,Portland,2021,Yes
+S009,Ian Clark,,M,,3.1,91,,,No
+S010,Julia Roberts,21,F,History,3.7,86,San Diego,2023,Yes
+S011,Kevin Hart,19,M,Computer Science,2.9,89,New York,2022,
+S012,Laura Wilson,22,F,Mathematics,3.3,94,Boston,2021,No
+S013,Mike Tyson,20,M,Physics,3.0,82,Chicago,2023,Yes
+S014,Nina Patel,18,F,Biology,3.8,96,Seattle,2022,No
+S015,Oscar Isaac,,M,Chemistry,2.7,80,Austin,2021,Yes
+S016,Paula Abdul,21,F,,3.5,93,Denver,2023,No
+S017,Quinn Fabray,19,F,Economics,,87,Miami,2022,Yes
+S018,Ryan Gosling,20,M,Psychology,3.2,,Portland,2021,No
+S019,Sara Connor,22,F,Engineering,3.6,90,,,Yes
+S020,Tom Hardy,18,M,History,3.1,84,San Diego,2023,
