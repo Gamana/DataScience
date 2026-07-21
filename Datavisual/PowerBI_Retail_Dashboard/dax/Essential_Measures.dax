@@ -1,0 +1,73 @@
+/*
+================================================================================
+  ESSENTIAL DAX MEASURES — copy one measure at a time into Power BI
+  Table: _Measures
+================================================================================
+*/
+
+// ----- Core -----
+
+Total Sales = SUM ( Fact_Sales[Sales] )
+
+Total Profit = SUM ( Fact_Sales[Profit] )
+
+Total Orders = DISTINCTCOUNT ( Fact_Sales[Order ID] )
+
+Total Quantity = SUM ( Fact_Sales[Quantity] )
+
+Average Sales = AVERAGE ( Fact_Sales[Sales] )
+
+Average Profit = AVERAGE ( Fact_Sales[Profit] )
+
+Profit Margin % = DIVIDE ( [Total Profit], [Total Sales], 0 )
+
+Customer Count = DISTINCTCOUNT ( Fact_Sales[CustomerKey] )
+
+Average Order Value = DIVIDE ( [Total Sales], [Total Orders], 0 )
+
+// ----- Targets (Dim_Targets not related; filtered by selected years) -----
+
+Sales Target =
+VAR SelectedYears = VALUES ( Dim_Date[Year] )
+RETURN
+    CALCULATE (
+        SUM ( Dim_Targets[Sales Target] ),
+        KEEPFILTERS ( Dim_Targets[Year] IN SelectedYears )
+    )
+
+Profit Target =
+VAR SelectedYears = VALUES ( Dim_Date[Year] )
+RETURN
+    CALCULATE (
+        SUM ( Dim_Targets[Profit Target] ),
+        KEEPFILTERS ( Dim_Targets[Year] IN SelectedYears )
+    )
+
+Sales Achievement % = DIVIDE ( [Total Sales], [Sales Target], 0 )
+
+Profit Achievement % = DIVIDE ( [Total Profit], [Profit Target], 0 )
+
+// ----- Time intelligence (Dim_Date must be marked as Date Table) -----
+
+Year-to-Date Sales = TOTALYTD ( [Total Sales], Dim_Date[Date] )
+
+Month-to-Date Sales = TOTALMTD ( [Total Sales], Dim_Date[Date] )
+
+Previous Month Sales =
+CALCULATE ( [Total Sales], DATEADD ( Dim_Date[Date], -1, MONTH ) )
+
+Sales Growth % =
+DIVIDE ( [Total Sales] - [Previous Month Sales], [Previous Month Sales], 0 )
+
+// ----- UX helpers -----
+
+Dynamic Report Title =
+VAR Y =
+    IF ( HASONEVALUE ( Dim_Date[Year] ), " — " & SELECTEDVALUE ( Dim_Date[Year] ), " — All Years" )
+RETURN
+    "Retail Sales Executive Dashboard" & Y
+
+Dynamic Date Display =
+"Data through: " & FORMAT ( MAX ( Fact_Sales[Order Date] ), "MMMM dd, yyyy" )
+
+Pipeline Value = SUM ( Dim_Sales_Pipeline[Pipeline Value] )

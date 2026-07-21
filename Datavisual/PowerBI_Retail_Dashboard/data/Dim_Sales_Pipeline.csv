@@ -1,0 +1,6 @@
+StageKey,Stage,Stage Order,Pipeline Value
+1,Lead,1,10000
+2,Qualified,2,7200
+3,Proposal,3,4800
+4,Negotiation,4,3100
+5,Won,5,2100

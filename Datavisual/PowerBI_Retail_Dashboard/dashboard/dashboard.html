@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Retail Sales Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    :root {
+      --blue: #0078d4;
+      --blue-dark: #005a9e;
+      --gray: #505050;
+      --dark: #252525;
+      --border: #e1e1e1;
+      --bg: #f5f7fa;
+      --white: #ffffff;
+      --good: #107c10;
+      --bad: #d83b01;
+      --muted: #69797e;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      --radius: 10px;
+      --font: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--dark);
+      min-height: 100vh;
+    }
+    header.app-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .subtitle {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .date-label {
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: right;
+    }
+    nav.pages {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .nav-btn, .reset-btn {
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--gray);
+      padding: 7px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .nav-btn.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+    .nav-btn:hover:not(.active) { border-color: var(--blue); color: var(--blue); }
+    .reset-btn {
+      margin-left: auto;
+      background: var(--bg);
+    }
+    .reset-btn:hover { background: #e8ecf0; }
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(140px, 200px));
+      gap: 12px;
+      padding: 12px 24px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .filter label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .filter select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font: inherit;
+      background: var(--white);
+      color: var(--dark);
+    }
+    main { padding: 16px 24px 40px; }
+    .page { display: none; }
+    .page.active { display: block; }
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+    .cards-4 { grid-template-columns: repeat(4, 1fr); }
+    .cards-2 { grid-template-columns: repeat(2, 1fr); }
+    .split-2 { grid-template-columns: 1.2fr 1fr; }
+    .split-3 { grid-template-columns: 1.2fr 1fr 0.9fr; }
+    .split-maps { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 1100px) {
+      .cards-4, .cards-2, .split-2, .split-3, .split-maps, .filters {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 700px) {
+      .cards-4, .cards-2, .split-2, .split-3, .split-maps, .filters {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px 16px;
+      min-height: 0;
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .kpi-value {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1.2;
+    }
+    .kpi-sub {
+      margin-top: 4px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .kpi-bar {
+      margin-top: 10px;
+      height: 8px;
+      background: #eef2f6;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .kpi-bar > span {
+      display: block;
+      height: 100%;
+      background: var(--blue);
+      border-radius: 99px;
+    }
+    .kpi-bar.good > span { background: var(--good); }
+    .kpi-bar.bad > span { background: var(--bad); }
+    .chart-box { position: relative; height: 260px; }
+    .chart-box.tall { height: 320px; }
+    .chart-box.map { height: 340px; }
+    #cityMap, #stateMap { height: 100%; width: 100%; border-radius: 8px; }
+    table.data {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+    table.data th, table.data td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    table.data th {
+      background: #f8fafc;
+      font-weight: 700;
+      color: var(--gray);
+      position: sticky;
+      top: 0;
+      cursor: pointer;
+      user-select: none;
+    }
+    table.data th:hover { color: var(--blue); }
+    table.data td.num, table.data th.num { text-align: right; }
+    .table-wrap { max-height: 320px; overflow: auto; }
+    .matrix-wrap { max-height: 320px; overflow: auto; }
+    .treemap {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 56px;
+      gap: 6px;
+      min-height: 200px;
+    }
+    .treemap-cell {
+      border-radius: 8px;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: default;
+    }
+    .treemap-cell span { opacity: 0.9; font-weight: 400; font-size: 0.72rem; }
+    .funnel {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 0;
+    }
+    .funnel-step {
+      color: #fff;
+      text-align: center;
+      padding: 10px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: transform 0.15s ease;
+    }
+    .funnel-step:hover { transform: scale(1.02); }
+    .funnel-step small { display: block; font-weight: 400; opacity: 0.9; }
+    .state-legend {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .state-legend .swatch {
+      height: 10px;
+      flex: 1;
+      border-radius: 4px;
+      background: linear-gradient(90deg, #deebf7, #0078d4);
+    }
+    .filled-states {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 6px;
+      max-height: 280px;
+      overflow: auto;
+    }
+    .state-chip {
+      border-radius: 8px;
+      padding: 8px;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .state-chip small { display: block; font-weight: 400; opacity: 0.95; }
+    .loading, .error {
+      padding: 48px 24px;
+      text-align: center;
+      color: var(--muted);
+    }
+    .error { color: var(--bad); }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      padding: 8px 24px 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="loading" id="loading">Loading retail sales data…</div>
+  </div>
+
+  <script>
+    const COLORS = {
+      blue: "#0078D4",
+      gray: "#505050",
+      green: "#107C10",
+      orange: "#D83B01",
+      teal: "#00B7C3",
+      purple: "#8764B8",
+      yellow: "#FFB900",
+      palette: ["#0078D4", "#505050", "#2B88D8", "#107C10", "#D83B01", "#8764B8", "#00B7C3", "#FFB900"],
+    };
+
+    const fmtMoney = (n) =>
+      (n < 0 ? "-$" : "$") + Math.abs(n).toLocaleString(undefined, { maximumFractionDigits: 0 });
+    const fmtMoneyExact = (n) =>
+      (n < 0 ? "-$" : "$") + Math.abs(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const fmtPct = (n) => (n * 100).toFixed(1) + "%";
+    const fmtNum = (n) => n.toLocaleString();
+
+    let DATA = null;
+    let factRows = [];
+    let cols = [];
+    let charts = {};
+    let cityMap = null;
+    let cityLayer = null;
+    let sortState = { key: "sales", dir: -1 };
+
+    const filters = { year: "all", category: "all", region: "all" };
+
+    function col(name) {
+      return cols.indexOf(name);
+    }
+
+    function filteredRows() {
+      const yi = col("Year");
+      const ci = col("Product Category");
+      const ri = col("Region");
+      return factRows.filter((r) => {
+        if (filters.year !== "all" && String(r[yi]) !== String(filters.year)) return false;
+        if (filters.category !== "all" && r[ci] !== filters.category) return false;
+        if (filters.region !== "all" && r[ri] !== filters.region) return false;
+        return true;
+      });
+    }
+
+    function aggregate(rows) {
+      const iSales = col("Sales");
+      const iProfit = col("Profit");
+      const iQty = col("Quantity");
+      const iOrder = col("Order ID");
+      const iCust = col("Customer ID");
+      const iYM = col("YearMonth");
+      const iCat = col("Product Category");
+      const iSub = col("Sub Category");
+      const iSeg = col("Segment");
+      const iPay = col("Payment Mode");
+      const iReg = col("Region");
+      const iProd = col("Product Name");
+      const iCity = col("City");
+      const iState = col("State");
+      const iLat = col("Latitude");
+      const iLon = col("Longitude");
+      const iYear = col("Year");
+
+      const orders = new Set();
+      const customers = new Set();
+      let sales = 0, profit = 0, qty = 0;
+
+      const monthly = new Map();
+      const byCat = new Map();
+      const bySeg = new Map();
+      const byPay = new Map();
+      const byReg = new Map();
+      const byProd = new Map();
+      const byCity = new Map();
+      const byState = new Map();
+      const matrix = new Map();
+
+      for (const r of rows) {
+        const s = +r[iSales];
+        const p = +r[iProfit];
+        const q = +r[iQty];
+        sales += s;
+        profit += p;
+        qty += q;
+        orders.add(r[iOrder]);
+        customers.add(r[iCust]);
+
+        const ym = r[iYM];
+        if (!monthly.has(ym)) monthly.set(ym, { sales: 0, profit: 0, qty: 0 });
+        const m = monthly.get(ym);
+        m.sales += s; m.profit += p; m.qty += q;
+
+        const cat = r[iCat];
+        if (!byCat.has(cat)) byCat.set(cat, { sales: 0, profit: 0, qty: 0 });
+        const c = byCat.get(cat);
+        c.sales += s; c.profit += p; c.qty += q;
+
+        const seg = r[iSeg];
+        bySeg.set(seg, (bySeg.get(seg) || 0) + s);
+
+        const pay = r[iPay];
+        byPay.set(pay, (byPay.get(pay) || 0) + s);
+
+        const reg = r[iReg];
+        if (!byReg.has(reg)) byReg.set(reg, { sales: 0, profit: 0 });
+        const rg = byReg.get(reg);
+        rg.sales += s; rg.profit += p;
+
+        const prodKey = r[iProd];
+        if (!byProd.has(prodKey)) {
+          byProd.set(prodKey, {
+            product: prodKey,
+            category: cat,
+            subCategory: r[iSub],
+            sales: 0,
+            profit: 0,
+            qty: 0,
+          });
+        }
+        const pr = byProd.get(prodKey);
+        pr.sales += s; pr.profit += p; pr.qty += q;
+
+        const cityKey = r[iCity] + "|" + r[iState];
+        if (!byCity.has(cityKey)) {
+          byCity.set(cityKey, {
+            city: r[iCity],
+            state: r[iState],
+            region: reg,
+            lat: +r[iLat],
+            lon: +r[iLon],
+            sales: 0,
+            profit: 0,
+            orders: new Set(),
+          });
+        }
+        const ct = byCity.get(cityKey);
+        ct.sales += s; ct.profit += p; ct.orders.add(r[iOrder]);
+
+        const st = r[iState];
+        if (!byState.has(st)) byState.set(st, { sales: 0, profit: 0 });
+        const stObj = byState.get(st);
+        stObj.sales += s; stObj.profit += p;
+
+        const mk = cat + "|" + r[iSub] + "|" + r[iYear];
+        if (!matrix.has(mk)) {
+          matrix.set(mk, {
+            category: cat,
+            subCategory: r[iSub],
+            year: r[iYear],
+            sales: 0,
+            profit: 0,
+          });
+        }
+        const mx = matrix.get(mk);
+        mx.sales += s; mx.profit += p;
+      }
+
+      const yearsInView = [...new Set(rows.map((r) => r[iYear]))];
+      let salesTarget = 0, profitTarget = 0;
+      for (const y of yearsInView) {
+        const t = DATA.targets[String(y)] || DATA.targets[y];
+        if (t) {
+          // Scale annual target if filtered (approx by share of months) — use full year target when year selected
+          if (filters.category === "all" && filters.region === "all") {
+            salesTarget += t.sales;
+            profitTarget += t.profit;
+          }
+        }
+      }
+      // When category/region filtered, scale targets by sales share of unfiltered year totals
+      if ((filters.category !== "all" || filters.region !== "all") && yearsInView.length) {
+        let allSales = 0, allProfit = 0;
+        for (const y of yearsInView) {
+          const t = DATA.targets[String(y)] || DATA.targets[y];
+          if (t) { allSales += t.sales; allProfit += t.profit; }
+        }
+        // Estimate: use ratio of filtered sales to all-data sales for those years
+        const allYearRows = factRows.filter((r) => yearsInView.includes(r[iYear]));
+        const allYearSales = allYearRows.reduce((a, r) => a + +r[iSales], 0);
+        const allYearProfit = allYearRows.reduce((a, r) => a + +r[iProfit], 0);
+        const shareS = allYearSales ? sales / allYearSales : 1;
+        const shareP = allYearProfit ? profit / allYearProfit : 1;
+        salesTarget = allSales * shareS * 1.08 / 1; // targets already ~1.08 of actual; keep proportional
+        // Simpler: proportional to filtered actual * same uplift baked into Dim_Targets
+        salesTarget = 0;
+        profitTarget = 0;
+        for (const y of yearsInView) {
+          const t = DATA.targets[String(y)] || DATA.targets[y];
+          if (!t) continue;
+          const yRows = allYearRows.filter((r) => r[iYear] === y);
+          const ySales = yRows.reduce((a, r) => a + +r[iSales], 0);
+          const yProfit = yRows.reduce((a, r) => a + +r[iProfit], 0);
+          const fSales = rows.filter((r) => r[iYear] === y).reduce((a, r) => a + +r[iSales], 0);
+          const fProfit = rows.filter((r) => r[iYear] === y).reduce((a, r) => a + +r[iProfit], 0);
+          salesTarget += t.sales * (ySales ? fSales / ySales : 0);
+          profitTarget += t.profit * (yProfit ? fProfit / yProfit : 0);
+        }
+      }
+
+      const products = [...byProd.values()].sort((a, b) => b.sales - a.sales);
+      const cities = [...byCity.values()].map((c) => ({
+        ...c,
+        orders: c.orders.size,
+      }));
+
+      return {
+        summary: {
+          totalSales: sales,
+          totalProfit: profit,
+          totalOrders: orders.size,
+          totalCustomers: customers.size,
+          totalQuantity: qty,
+          avgSales: orders.size ? sales / rows.length : 0,
+          avgProfit: rows.length ? profit / rows.length : 0,
+          profitMargin: sales ? profit / sales : 0,
+          aov: orders.size ? sales / orders.size : 0,
+          salesTarget,
+          profitTarget,
+          salesAchievement: salesTarget ? sales / salesTarget : 0,
+          profitAchievement: profitTarget ? profit / profitTarget : 0,
+        },
+        monthly: [...monthly.entries()]
+          .sort((a, b) => a[0].localeCompare(b[0]))
+          .map(([ym, v]) => ({ ym, ...v })),
+        byCategory: [...byCat.entries()].map(([category, v]) => ({ category, ...v })),
+        bySegment: [...bySeg.entries()].map(([segment, sales]) => ({ segment, sales })),
+        byPayment: [...byPay.entries()].map(([mode, sales]) => ({ mode, sales })),
+        byRegion: [...byReg.entries()].map(([region, v]) => ({ region, ...v })),
+        products,
+        top10: products.slice(0, 10),
+        matrix: [...matrix.values()],
+        cities,
+        states: [...byState.entries()].map(([state, v]) => ({ state, ...v })),
+      };
+    }
+
+    function destroyCharts() {
+      Object.values(charts).forEach((c) => c.destroy());
+      charts = {};
+    }
+
+    function makeChart(id, config) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (charts[id]) charts[id].destroy();
+      charts[id] = new Chart(el, config);
+    }
+
+    function commonOptions(extra = {}) {
+      return {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { boxWidth: 12, font: { family: "'Source Sans 3'" } } },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                const v = ctx.parsed.y ?? ctx.parsed ?? ctx.raw;
+                const num = typeof v === "object" ? v.y ?? v.r ?? 0 : v;
+                return ` ${ctx.dataset.label ? ctx.dataset.label + ": " : ""}${fmtMoney(num)}`;
+              },
+            },
+          },
+        },
+        ...extra,
+      };
+    }
+
+    function renderKPIs(agg) {
+      const s = agg.summary;
+      document.getElementById("kpiSales").textContent = fmtMoney(s.totalSales);
+      document.getElementById("kpiProfit").textContent = fmtMoney(s.totalProfit);
+      document.getElementById("kpiOrders").textContent = fmtNum(s.totalOrders);
+      document.getElementById("kpiCustomers").textContent = fmtNum(s.totalCustomers);
+
+      document.getElementById("kpiSalesTargetVal").textContent = fmtMoney(s.totalSales);
+      document.getElementById("kpiSalesTargetGoal").textContent =
+        "Target " + fmtMoney(s.salesTarget) + " · " + fmtPct(s.salesAchievement);
+      const sb = document.getElementById("kpiSalesBar");
+      sb.style.width = Math.min(100, s.salesAchievement * 100) + "%";
+      sb.parentElement.className = "kpi-bar " + (s.salesAchievement >= 1 ? "good" : s.salesAchievement >= 0.9 ? "" : "bad");
+
+      document.getElementById("kpiProfitTargetVal").textContent = fmtMoney(s.totalProfit);
+      document.getElementById("kpiProfitTargetGoal").textContent =
+        "Target " + fmtMoney(s.profitTarget) + " · " + fmtPct(s.profitAchievement);
+      const pb = document.getElementById("kpiProfitBar");
+      pb.style.width = Math.min(100, s.profitAchievement * 100) + "%";
+      pb.parentElement.className = "kpi-bar " + (s.profitAchievement >= 1 ? "good" : s.profitAchievement >= 0.9 ? "" : "bad");
+
+      const titleYear =
+        filters.year === "all" ? "All Years" : String(filters.year);
+      document.getElementById("dynamicTitle").textContent =
+        "Retail Sales Executive Dashboard — " + titleYear;
+      document.getElementById("dynamicDate").textContent =
+        "Data through: " +
+        new Date(DATA.meta.dateMax + "T00:00:00").toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
+      const elM = document.getElementById("quickMargin");
+      const elA = document.getElementById("quickAov");
+      const elQ = document.getElementById("quickQty");
+      if (elM) elM.textContent = fmtPct(s.profitMargin);
+      if (elA) elA.textContent = fmtMoney(s.aov);
+      if (elQ) elQ.textContent = fmtNum(s.totalQuantity);
+    }
+
+    function renderExecutive(agg) {
+      renderKPIs(agg);
+
+      makeChart("chartMonthlySales", {
+        type: "line",
+        data: {
+          labels: agg.monthly.map((d) => d.ym),
+          datasets: [
+            {
+              label: "Sales",
+              data: agg.monthly.map((d) => d.sales),
+              borderColor: COLORS.blue,
+              backgroundColor: "rgba(0,120,212,0.12)",
+              fill: false,
+              tension: 0.25,
+              pointRadius: 2,
+            },
+          ],
+        },
+        options: commonOptions({
+          scales: {
+            y: { ticks: { callback: (v) => fmtMoney(v) } },
+            x: { ticks: { maxRotation: 45, minRotation: 0, autoSkip: true, maxTicksLimit: 12 } },
+          },
+        }),
+      });
+
+      makeChart("chartSalesCategory", {
+        type: "bar",
+        data: {
+          labels: agg.byCategory.map((d) => d.category),
+          datasets: [
+            {
+              label: "Sales",
+              data: agg.byCategory.map((d) => d.sales),
+              backgroundColor: COLORS.blue,
+              borderRadius: 6,
+            },
+          ],
+        },
+        options: commonOptions({
+          plugins: { legend: { display: false } },
+          scales: { y: { ticks: { callback: (v) => fmtMoney(v) } } },
+        }),
+      });
+
+      makeChart("chartSalesSegment", {
+        type: "doughnut",
+        data: {
+          labels: agg.bySegment.map((d) => d.segment),
+          datasets: [
+            {
+              data: agg.bySegment.map((d) => d.sales),
+              backgroundColor: [COLORS.blue, COLORS.gray, COLORS.teal],
+              borderWidth: 2,
+              borderColor: "#fff",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: "58%",
+          plugins: {
+            legend: { position: "bottom" },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => {
+                  const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                  return ` ${ctx.label}: ${fmtMoney(ctx.raw)} (${((ctx.raw / total) * 100).toFixed(1)}%)`;
+                },
+              },
+            },
+          },
+        },
+      });
+    }
+
+    function renderProduct(agg) {
+      // Table
+      const tbody = document.querySelector("#productTable tbody");
+      let products = [...agg.products];
+      products.sort((a, b) => {
+        const ka = a[sortState.key];
+        const kb = b[sortState.key];
+        if (typeof ka === "string") return ka.localeCompare(kb) * sortState.dir;
+        return (ka - kb) * sortState.dir;
+      });
+      tbody.innerHTML = products
+        .map(
+          (p) => `<tr>
+          <td>${p.product}</td>
+          <td>${p.category}</td>
+          <td class="num">${fmtNum(p.qty)}</td>
+          <td class="num">${fmtMoneyExact(p.sales)}</td>
+          <td class="num" style="color:${p.profit >= 0 ? "var(--good)" : "var(--bad)"}">${fmtMoneyExact(p.profit)}</td>
+        </tr>`
+        )
+        .join("");
+
+      // Matrix
+      const years = [...new Set(agg.matrix.map((m) => m.year))].sort();
+      const groups = new Map();
+      for (const m of agg.matrix) {
+        const key = m.category + "||" + m.subCategory;
+        if (!groups.has(key)) {
+          groups.set(key, { category: m.category, subCategory: m.subCategory, years: {} });
+        }
+        groups.get(key).years[m.year] = m;
+      }
+      const thead = `<tr><th>Category</th><th>Sub Category</th>${years
+        .map((y) => `<th class="num" colspan="2">${y}</th>`)
+        .join("")}</tr>
+        <tr><th></th><th></th>${years
+          .map(() => `<th class="num">Sales</th><th class="num">Profit</th>`)
+          .join("")}</tr>`;
+      document.querySelector("#matrixTable thead").innerHTML = thead;
+      document.querySelector("#matrixTable tbody").innerHTML = [...groups.values()]
+        .sort((a, b) => a.category.localeCompare(b.category) || a.subCategory.localeCompare(b.subCategory))
+        .map((g) => {
+          const cells = years
+            .map((y) => {
+              const m = g.years[y];
+              return `<td class="num">${m ? fmtMoney(m.sales) : "—"}</td><td class="num">${m ? fmtMoney(m.profit) : "—"}</td>`;
+            })
+            .join("");
+          return `<tr><td>${g.category}</td><td>${g.subCategory}</td>${cells}</tr>`;
+        })
+        .join("");
+
+      // Top 10 bar (horizontal)
+      makeChart("chartTop10", {
+        type: "bar",
+        data: {
+          labels: agg.top10.map((d) => d.product),
+          datasets: [
+            {
+              label: "Sales",
+              data: agg.top10.map((d) => d.sales),
+              backgroundColor: COLORS.blue,
+              borderRadius: 6,
+            },
+          ],
+        },
+        options: commonOptions({
+          indexAxis: "y",
+          plugins: { legend: { display: false } },
+          scales: { x: { ticks: { callback: (v) => fmtMoney(v) } } },
+        }),
+      });
+
+      // Treemap
+      const totalCat = agg.byCategory.reduce((a, c) => a + c.sales, 0) || 1;
+      const treemap = document.getElementById("treemap");
+      const colorMap = { Technology: COLORS.blue, Furniture: COLORS.gray, "Office Supplies": COLORS.teal };
+      treemap.innerHTML = agg.byCategory
+        .map((c) => {
+          const span = Math.max(2, Math.round((c.sales / totalCat) * 12));
+          return `<div class="treemap-cell" style="grid-column: span ${span}; background:${colorMap[c.category] || COLORS.purple}">
+            ${c.category}<span>${fmtMoney(c.sales)}</span>
+          </div>`;
+        })
+        .join("");
+
+      // Scatter
+      makeChart("chartScatter", {
+        type: "scatter",
+        data: {
+          datasets: [
+            {
+              label: "Products",
+              data: agg.products.map((p) => ({
+                x: p.sales,
+                y: p.profit,
+                r: Math.max(4, Math.sqrt(p.qty) * 1.2),
+                product: p.product,
+              })),
+              backgroundColor: "rgba(0,120,212,0.55)",
+              borderColor: COLORS.blue,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => {
+                  const raw = ctx.raw;
+                  return ` ${raw.product}: Sales ${fmtMoney(raw.x)}, Profit ${fmtMoney(raw.y)}`;
+                },
+              },
+            },
+          },
+          scales: {
+            x: { title: { display: true, text: "Sales ($)" }, ticks: { callback: (v) => fmtMoney(v) } },
+            y: { title: { display: true, text: "Profit ($)" }, ticks: { callback: (v) => fmtMoney(v) } },
+          },
+        },
+      });
+
+      // Pie payment
+      makeChart("chartPayment", {
+        type: "pie",
+        data: {
+          labels: agg.byPayment.map((d) => d.mode),
+          datasets: [
+            {
+              data: agg.byPayment.map((d) => d.sales),
+              backgroundColor: COLORS.palette,
+              borderWidth: 2,
+              borderColor: "#fff",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: "bottom", labels: { boxWidth: 12 } },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => ` ${ctx.label}: ${fmtMoney(ctx.raw)}`,
+              },
+            },
+          },
+        },
+      });
+
+      // Funnel
+      const maxPipe = Math.max(...DATA.pipeline.map((p) => p.value));
+      document.getElementById("funnel").innerHTML = DATA.pipeline
+        .map((p, idx) => {
+          const width = 40 + (p.value / maxPipe) * 55;
+          const shade = ["#0078D4", "#2B88D8", "#00B7C3", "#505050", "#107C10"][idx];
+          return `<div class="funnel-step" style="width:${width}%;background:${shade}">
+            ${p.stage}<small>${fmtMoney(p.value)}</small>
+          </div>`;
+        })
+        .join("");
+    }
+
+    function renderGeo(agg) {
+      // City map (Leaflet)
+      if (!cityMap) {
+        cityMap = L.map("cityMap", { scrollWheelZoom: false }).setView([39.5, -98.35], 4);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "&copy; OpenStreetMap",
+          maxZoom: 12,
+        }).addTo(cityMap);
+      }
+      if (cityLayer) cityMap.removeLayer(cityLayer);
+      cityLayer = L.layerGroup();
+      const maxSales = Math.max(...agg.cities.map((c) => c.sales), 1);
+      for (const c of agg.cities) {
+        const radius = 6 + (c.sales / maxSales) * 22;
+        L.circleMarker([c.lat, c.lon], {
+          radius,
+          color: COLORS.blue,
+          fillColor: COLORS.blue,
+          fillOpacity: 0.45,
+          weight: 1,
+        })
+          .bindPopup(`<strong>${c.city}, ${c.state}</strong><br>Sales: ${fmtMoneyExact(c.sales)}<br>Orders: ${c.orders}`)
+          .addTo(cityLayer);
+      }
+      cityLayer.addTo(cityMap);
+      setTimeout(() => cityMap.invalidateSize(), 80);
+
+      // Filled map (state chips choropleth)
+      const maxSt = Math.max(...agg.states.map((s) => s.sales), 1);
+      document.getElementById("filledStates").innerHTML = [...agg.states]
+        .sort((a, b) => b.sales - a.sales)
+        .map((s) => {
+          const t = s.sales / maxSt;
+          const alpha = 0.35 + t * 0.65;
+          return `<div class="state-chip" style="background:rgba(0,120,212,${alpha})">
+            ${s.state}<small>${fmtMoney(s.sales)}</small>
+          </div>`;
+        })
+        .join("");
+
+      makeChart("chartAreaProfit", {
+        type: "line",
+        data: {
+          labels: agg.monthly.map((d) => d.ym),
+          datasets: [
+            {
+              label: "Profit",
+              data: agg.monthly.map((d) => d.profit),
+              borderColor: COLORS.green,
+              backgroundColor: "rgba(16,124,16,0.18)",
+              fill: true,
+              tension: 0.3,
+              pointRadius: 0,
+            },
+          ],
+        },
+        options: commonOptions({
+          scales: {
+            y: { ticks: { callback: (v) => fmtMoney(v) } },
+            x: { ticks: { maxTicksLimit: 12 } },
+          },
+        }),
+      });
+
+      makeChart("chartRegion", {
+        type: "bar",
+        data: {
+          labels: agg.byRegion.map((d) => d.region),
+          datasets: [
+            {
+              label: "Sales",
+              data: agg.byRegion.map((d) => d.sales),
+              backgroundColor: COLORS.blue,
+              borderRadius: 6,
+            },
+          ],
+        },
+        options: commonOptions({
+          plugins: { legend: { display: false } },
+          scales: { y: { ticks: { callback: (v) => fmtMoney(v) } } },
+        }),
+      });
+
+      makeChart("chartQty", {
+        type: "line",
+        data: {
+          labels: agg.monthly.map((d) => d.ym),
+          datasets: [
+            {
+              label: "Quantity",
+              data: agg.monthly.map((d) => d.qty),
+              borderColor: COLORS.gray,
+              backgroundColor: COLORS.gray,
+              tension: 0.25,
+              pointRadius: 2,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { maxTicksLimit: 12 } },
+            y: { title: { display: true, text: "Units" } },
+          },
+        },
+      });
+    }
+
+    function refresh() {
+      const rows = filteredRows();
+      const agg = aggregate(rows);
+      const active = document.querySelector(".page.active")?.dataset.page || "executive";
+      renderKPIs(agg);
+      if (active === "executive") renderExecutive(agg);
+      if (active === "product") renderProduct(agg);
+      if (active === "geo") renderGeo(agg);
+    }
+
+    function showPage(name) {
+      document.querySelectorAll(".page").forEach((p) => p.classList.toggle("active", p.dataset.page === name));
+      document.querySelectorAll(".nav-btn").forEach((b) => b.classList.toggle("active", b.dataset.page === name));
+      refresh();
+    }
+
+    function buildShell() {
+      const app = document.getElementById("app");
+      app.innerHTML = `
+        <header class="app-header">
+          <div class="title-row">
+            <div>
+              <h1 id="dynamicTitle">Retail Sales Executive Dashboard</h1>
+              <p class="subtitle">${fmtNum(DATA.meta.rows)} orders · ${DATA.meta.dateMin} to ${DATA.meta.dateMax}</p>
+            </div>
+            <div class="date-label" id="dynamicDate"></div>
+          </div>
+          <nav class="pages">
+            <button class="nav-btn active" data-page="executive">Executive Dashboard</button>
+            <button class="nav-btn" data-page="product">Product Analysis</button>
+            <button class="nav-btn" data-page="geo">Geographic Dashboard</button>
+            <button class="reset-btn" id="resetFilters">Reset Filters</button>
+          </nav>
+        </header>
+        <div class="filters">
+          <div class="filter">
+            <label>Year</label>
+            <select id="filterYear"><option value="all">All Years</option>${DATA.filters.years
+              .map((y) => `<option value="${y}">${y}</option>`)
+              .join("")}</select>
+          </div>
+          <div class="filter">
+            <label>Category</label>
+            <select id="filterCategory"><option value="all">All Categories</option>${DATA.filters.categories
+              .map((c) => `<option value="${c}">${c}</option>`)
+              .join("")}</select>
+          </div>
+          <div class="filter">
+            <label>Region</label>
+            <select id="filterRegion"><option value="all">All Regions</option>${DATA.filters.regions
+              .map((r) => `<option value="${r}">${r}</option>`)
+              .join("")}</select>
+          </div>
+        </div>
+        <main>
+          <section class="page active" data-page="executive">
+            <div class="grid cards-4" style="margin-bottom:14px">
+              <div class="card"><h3>Total Sales</h3><div class="kpi-value" id="kpiSales">—</div></div>
+              <div class="card"><h3>Total Profit</h3><div class="kpi-value" id="kpiProfit">—</div></div>
+              <div class="card"><h3>Total Orders</h3><div class="kpi-value" id="kpiOrders">—</div></div>
+              <div class="card"><h3>Total Customers</h3><div class="kpi-value" id="kpiCustomers">—</div></div>
+            </div>
+            <div class="grid cards-2" style="margin-bottom:14px">
+              <div class="card">
+                <h3>KPI — Sales vs Target</h3>
+                <div class="kpi-value" id="kpiSalesTargetVal">—</div>
+                <div class="kpi-sub" id="kpiSalesTargetGoal"></div>
+                <div class="kpi-bar"><span id="kpiSalesBar"></span></div>
+              </div>
+              <div class="card">
+                <h3>KPI — Profit vs Target</h3>
+                <div class="kpi-value" id="kpiProfitTargetVal">—</div>
+                <div class="kpi-sub" id="kpiProfitTargetGoal"></div>
+                <div class="kpi-bar"><span id="kpiProfitBar"></span></div>
+              </div>
+            </div>
+            <div class="grid split-2" style="margin-bottom:14px">
+              <div class="card"><h3>Monthly Sales Trend</h3><div class="chart-box"><canvas id="chartMonthlySales"></canvas></div></div>
+              <div class="card"><h3>Sales by Category</h3><div class="chart-box"><canvas id="chartSalesCategory"></canvas></div></div>
+            </div>
+            <div class="grid split-2">
+              <div class="card"><h3>Sales by Segment</h3><div class="chart-box"><canvas id="chartSalesSegment"></canvas></div></div>
+              <div class="card">
+                <h3>Quick Stats</h3>
+                <p class="kpi-sub" style="margin-top:12px">Profit Margin, Average Order Value, and Quantity update with slicers.</p>
+                <div style="margin-top:18px">
+                  <div class="kpi-sub">Profit Margin</div>
+                  <div class="kpi-value" style="font-size:1.3rem" id="quickMargin">—</div>
+                  <div class="kpi-sub" style="margin-top:12px">Average Order Value</div>
+                  <div class="kpi-value" style="font-size:1.3rem" id="quickAov">—</div>
+                  <div class="kpi-sub" style="margin-top:12px">Total Quantity</div>
+                  <div class="kpi-value" style="font-size:1.3rem" id="quickQty">—</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" data-page="product">
+            <div class="grid split-2" style="margin-bottom:14px">
+              <div class="card">
+                <h3>Product Table</h3>
+                <div class="table-wrap">
+                  <table class="data" id="productTable">
+                    <thead>
+                      <tr>
+                        <th data-sort="product">Product Name</th>
+                        <th data-sort="category">Category</th>
+                        <th class="num" data-sort="qty">Quantity</th>
+                        <th class="num" data-sort="sales">Sales</th>
+                        <th class="num" data-sort="profit">Profit</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Matrix — Category / Sub Category by Year</h3>
+                <div class="matrix-wrap">
+                  <table class="data" id="matrixTable"><thead></thead><tbody></tbody></table>
+                </div>
+              </div>
+            </div>
+            <div class="grid split-2" style="margin-bottom:14px">
+              <div class="card"><h3>Top 10 Products by Sales</h3><div class="chart-box tall"><canvas id="chartTop10"></canvas></div></div>
+              <div class="card"><h3>Tree Map — Sales by Category</h3><div id="treemap" class="treemap"></div></div>
+            </div>
+            <div class="grid split-3">
+              <div class="card"><h3>Scatter — Sales vs Profit (size = Quantity)</h3><div class="chart-box"><canvas id="chartScatter"></canvas></div></div>
+              <div class="card"><h3>Pie — Sales by Payment Mode</h3><div class="chart-box"><canvas id="chartPayment"></canvas></div></div>
+              <div class="card"><h3>Funnel — Sales Pipeline</h3><div id="funnel" class="funnel"></div></div>
+            </div>
+          </section>
+
+          <section class="page" data-page="geo">
+            <div class="grid split-maps" style="margin-bottom:14px">
+              <div class="card"><h3>Map — Sales by City</h3><div class="chart-box map"><div id="cityMap"></div></div></div>
+              <div class="card">
+                <h3>Filled Map — Sales by State</h3>
+                <div id="filledStates" class="filled-states"></div>
+                <div class="state-legend"><span>Low</span><div class="swatch"></div><span>High</span></div>
+              </div>
+            </div>
+            <div class="grid split-2" style="margin-bottom:14px">
+              <div class="card"><h3>Area Chart — Monthly Profit</h3><div class="chart-box"><canvas id="chartAreaProfit"></canvas></div></div>
+              <div class="card"><h3>Column Chart — Sales by Region</h3><div class="chart-box"><canvas id="chartRegion"></canvas></div></div>
+            </div>
+            <div class="card"><h3>Line Chart — Monthly Quantity Sold</h3><div class="chart-box"><canvas id="chartQty"></canvas></div></div>
+          </section>
+        </main>
+        <footer>Retail Sales Dashboard · Blue / Gray / White theme · Interactive filters sync across all pages</footer>
+      `;
+
+      document.querySelectorAll(".nav-btn").forEach((btn) => {
+        btn.addEventListener("click", () => showPage(btn.dataset.page));
+      });
+      document.getElementById("filterYear").addEventListener("change", (e) => {
+        filters.year = e.target.value;
+        refresh();
+      });
+      document.getElementById("filterCategory").addEventListener("change", (e) => {
+        filters.category = e.target.value;
+        refresh();
+      });
+      document.getElementById("filterRegion").addEventListener("change", (e) => {
+        filters.region = e.target.value;
+        refresh();
+      });
+      document.getElementById("resetFilters").addEventListener("click", () => {
+        filters.year = "all";
+        filters.category = "all";
+        filters.region = "all";
+        document.getElementById("filterYear").value = "all";
+        document.getElementById("filterCategory").value = "all";
+        document.getElementById("filterRegion").value = "all";
+        refresh();
+      });
+      document.querySelectorAll("#productTable th[data-sort]").forEach((th) => {
+        th.addEventListener("click", () => {
+          const key = th.dataset.sort;
+          if (sortState.key === key) sortState.dir *= -1;
+          else {
+            sortState.key = key;
+            sortState.dir = key === "product" || key === "category" ? 1 : -1;
+          }
+          refresh();
+        });
+      });
+    }
+
+    async function init() {
+      try {
+        const res = await fetch("dashboard_data.json");
+        if (!res.ok) throw new Error("Could not load dashboard_data.json");
+        DATA = await res.json();
+        cols = DATA.fact.columns;
+        factRows = DATA.fact.rows;
+        buildShell();
+        showPage("executive");
+      } catch (err) {
+        document.getElementById("app").innerHTML =
+          `<div class="error"><strong>Failed to load dashboard.</strong><br>${err.message}<br><br>
+          Open this folder via a local server, e.g.<br>
+          <code>python3 -m http.server 8080</code> then visit
+          <code>http://localhost:8080/dashboard.html</code></div>`;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

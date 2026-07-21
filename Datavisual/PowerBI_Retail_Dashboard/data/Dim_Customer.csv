@@ -1,0 +1,851 @@
+CustomerKey,Customer ID,Customer Name,Segment
+1,CUS-00001,Joseph Johnson,Corporate
+2,CUS-00002,Ashley Anderson,Consumer
+3,CUS-00003,Susan Baker,Corporate
+4,CUS-00004,Anna Garcia,Corporate
+5,CUS-00005,John Johnson,Consumer
+6,CUS-00006,Sandra Allen,Corporate
+7,CUS-00007,Brenda Gonzalez,Corporate
+8,CUS-00008,Anna Clark,Consumer
+9,CUS-00009,Emily Phillips,Home Office
+10,CUS-00010,Christopher Hall,Consumer
+11,CUS-00011,Emily Martinez,Consumer
+12,CUS-00012,Carol Miller,Consumer
+13,CUS-00013,Richard Thompson,Home Office
+14,CUS-00014,Kimberly Phillips,Consumer
+15,CUS-00015,Ryan Wright,Consumer
+16,CUS-00016,Timothy Garcia,Corporate
+17,CUS-00017,George Torres,Consumer
+18,CUS-00018,David Williams,Corporate
+19,CUS-00019,Donna Garcia,Home Office
+20,CUS-00020,Richard Harris,Consumer
+21,CUS-00021,George Hernandez,Consumer
+22,CUS-00022,Anthony Nelson,Consumer
+23,CUS-00023,Elizabeth Hill,Corporate
+24,CUS-00024,Jonathan Campbell,Consumer
+25,CUS-00025,Cynthia Harris,Consumer
+26,CUS-00026,Brenda Anderson,Corporate
+27,CUS-00027,Linda Anderson,Home Office
+28,CUS-00028,Kenneth Sanchez,Consumer
+29,CUS-00029,Margaret Torres,Home Office
+30,CUS-00030,Kenneth Wilson,Corporate
+31,CUS-00031,Ronald Adams,Consumer
+32,CUS-00032,Kimberly Rodriguez,Consumer
+33,CUS-00033,Brenda Wright,Consumer
+34,CUS-00034,Jason Nguyen,Consumer
+35,CUS-00035,Mark Rodriguez,Consumer
+36,CUS-00036,Barbara Carter,Consumer
+37,CUS-00037,Joseph Martinez,Corporate
+38,CUS-00038,Jason Hill,Consumer
+39,CUS-00039,Timothy Hill,Home Office
+40,CUS-00040,Shirley Taylor,Home Office
+41,CUS-00041,Mary Baker,Corporate
+42,CUS-00042,Jonathan Carter,Consumer
+43,CUS-00043,Carol Davis,Consumer
+44,CUS-00044,Christopher Robinson,Consumer
+45,CUS-00045,Kimberly Allen,Corporate
+46,CUS-00046,Nicholas Miller,Home Office
+47,CUS-00047,Joshua Turner,Corporate
+48,CUS-00048,Betty Martinez,Consumer
+49,CUS-00049,Christopher Wright,Home Office
+50,CUS-00050,Shirley Smith,Corporate
+51,CUS-00051,Gary Johnson,Consumer
+52,CUS-00052,George Turner,Corporate
+53,CUS-00053,Donald Brown,Consumer
+54,CUS-00054,William Garcia,Corporate
+55,CUS-00055,David Carter,Corporate
+56,CUS-00056,Thomas Rodriguez,Corporate
+57,CUS-00057,Stephen Hernandez,Consumer
+58,CUS-00058,Jason Wilson,Home Office
+59,CUS-00059,Betty Rivera,Consumer
+60,CUS-00060,Melissa Lewis,Home Office
+61,CUS-00061,Laura Davis,Consumer
+62,CUS-00062,David Perez,Consumer
+63,CUS-00063,Stephen Anderson,Corporate
+64,CUS-00064,James Jones,Corporate
+65,CUS-00065,Kevin Jones,Consumer
+66,CUS-00066,Emily Nelson,Consumer
+67,CUS-00067,Anna Rodriguez,Corporate
+68,CUS-00068,Jacob Thomas,Corporate
+69,CUS-00069,Edward Gonzalez,Consumer
+70,CUS-00070,Sharon Thompson,Consumer
+71,CUS-00071,Cynthia Parker,Corporate
+72,CUS-00072,Richard Brown,Consumer
+73,CUS-00073,Carol Phillips,Home Office
+74,CUS-00074,Ashley Gonzalez,Consumer
+75,CUS-00075,Laura Rodriguez,Consumer
+76,CUS-00076,Emily Robinson,Consumer
+77,CUS-00077,Elizabeth Lewis,Corporate
+78,CUS-00078,Stephen Miller,Consumer
+79,CUS-00079,Anna Turner,Consumer
+80,CUS-00080,Donald Hernandez,Consumer
+81,CUS-00081,Kathleen Wilson,Home Office
+82,CUS-00082,Linda Hernandez,Consumer
+83,CUS-00083,Deborah Taylor,Home Office
+84,CUS-00084,Ryan Jackson,Consumer
+85,CUS-00085,Brenda Nelson,Corporate
+86,CUS-00086,Karen Gonzalez,Consumer
+87,CUS-00087,Linda Nguyen,Corporate
+88,CUS-00088,Linda Mitchell,Consumer
+89,CUS-00089,Michael Nguyen,Consumer
+90,CUS-00090,Shirley Hernandez,Consumer
+91,CUS-00091,Angela Garcia,Home Office
+92,CUS-00092,David Hill,Consumer
+93,CUS-00093,Donald Sanchez,Consumer
+94,CUS-00094,Ashley Nguyen,Corporate
+95,CUS-00095,William Clark,Corporate
+96,CUS-00096,Eric Lee,Home Office
+97,CUS-00097,Kenneth Thomas,Consumer
+98,CUS-00098,Thomas Nelson,Corporate
+99,CUS-00099,Ryan Lee,Home Office
+100,CUS-00100,Elizabeth Smith,Consumer
+101,CUS-00101,Richard Jones,Corporate
+102,CUS-00102,Nicholas Taylor,Consumer
+103,CUS-00103,Brian Jones,Home Office
+104,CUS-00104,Melissa Jackson,Consumer
+105,CUS-00105,Anna Rivera,Consumer
+106,CUS-00106,Stephen Martin,Home Office
+107,CUS-00107,Susan Rodriguez,Consumer
+108,CUS-00108,Susan Mitchell,Corporate
+109,CUS-00109,Paul Jackson,Corporate
+110,CUS-00110,Carol Wilson,Corporate
+111,CUS-00111,Gary Taylor,Home Office
+112,CUS-00112,Michael Garcia,Corporate
+113,CUS-00113,Emily Williams,Consumer
+114,CUS-00114,Thomas Green,Home Office
+115,CUS-00115,Christopher Mitchell,Consumer
+116,CUS-00116,Jason Scott,Consumer
+117,CUS-00117,Elizabeth Hall,Home Office
+118,CUS-00118,Anna Williams,Home Office
+119,CUS-00119,Stephen Martinez,Consumer
+120,CUS-00120,Jennifer Martin,Consumer
+121,CUS-00121,Jennifer Thompson,Consumer
+122,CUS-00122,Ashley Nelson,Consumer
+123,CUS-00123,Brenda Parker,Consumer
+124,CUS-00124,Karen Thomas,Home Office
+125,CUS-00125,Daniel Clark,Consumer
+126,CUS-00126,Kevin Gomez,Home Office
+127,CUS-00127,Ashley Moore,Consumer
+128,CUS-00128,Susan Harris,Home Office
+129,CUS-00129,Jacob Anderson,Consumer
+130,CUS-00130,Ryan Thompson,Consumer
+131,CUS-00131,Sandra Anderson,Consumer
+132,CUS-00132,Matthew Sanchez,Consumer
+133,CUS-00133,David Roberts,Consumer
+134,CUS-00134,Angela Sanchez,Corporate
+135,CUS-00135,Jonathan Perez,Home Office
+136,CUS-00136,Joseph Taylor,Consumer
+137,CUS-00137,Kimberly Williams,Consumer
+138,CUS-00138,Kenneth Ramirez,Corporate
+139,CUS-00139,Angela Davis,Consumer
+140,CUS-00140,Matthew Taylor,Consumer
+141,CUS-00141,Sharon Smith,Consumer
+142,CUS-00142,Jonathan Baker,Corporate
+143,CUS-00143,Betty White,Consumer
+144,CUS-00144,Kevin Flores,Consumer
+145,CUS-00145,Jessica Campbell,Home Office
+146,CUS-00146,Nicholas Martin,Corporate
+147,CUS-00147,Dorothy Sanchez,Corporate
+148,CUS-00148,Stephen Rodriguez,Consumer
+149,CUS-00149,Timothy Baker,Corporate
+150,CUS-00150,Daniel Flores,Corporate
+151,CUS-00151,Stephanie Scott,Home Office
+152,CUS-00152,Joshua Jackson,Consumer
+153,CUS-00153,Dorothy Robinson,Consumer
+154,CUS-00154,Margaret Allen,Consumer
+155,CUS-00155,Lisa Nelson,Consumer
+156,CUS-00156,Angela Nelson,Corporate
+157,CUS-00157,Kevin Garcia,Corporate
+158,CUS-00158,Donald Baker,Consumer
+159,CUS-00159,Patricia Williams,Consumer
+160,CUS-00160,Jacob Flores,Home Office
+161,CUS-00161,Elizabeth Robinson,Consumer
+162,CUS-00162,Matthew Rivera,Corporate
+163,CUS-00163,Amy Sanchez,Consumer
+164,CUS-00164,James Carter,Home Office
+165,CUS-00165,Susan Roberts,Consumer
+166,CUS-00166,Daniel Phillips,Home Office
+167,CUS-00167,Eric Robinson,Consumer
+168,CUS-00168,Ashley Diaz,Consumer
+169,CUS-00169,Sarah Phillips,Consumer
+170,CUS-00170,Shirley Scott,Corporate
+171,CUS-00171,Jeffrey Flores,Corporate
+172,CUS-00172,Nicholas Ramirez,Home Office
+173,CUS-00173,Stephen Lewis,Home Office
+174,CUS-00174,Jacob Lewis,Consumer
+175,CUS-00175,Ashley Turner,Corporate
+176,CUS-00176,Eric Young,Corporate
+177,CUS-00177,Emily Lewis,Consumer
+178,CUS-00178,Andrew Thomas,Consumer
+179,CUS-00179,Kenneth Wright,Consumer
+180,CUS-00180,Karen Anderson,Consumer
+181,CUS-00181,Karen Rivera,Consumer
+182,CUS-00182,Rebecca Clark,Consumer
+183,CUS-00183,Cynthia Clark,Consumer
+184,CUS-00184,Rebecca Harris,Home Office
+185,CUS-00185,Robert Diaz,Home Office
+186,CUS-00186,Timothy Walker,Consumer
+187,CUS-00187,Amanda Martin,Corporate
+188,CUS-00188,Rebecca Wright,Corporate
+189,CUS-00189,Anna Phillips,Corporate
+190,CUS-00190,Mark Young,Consumer
+191,CUS-00191,Sharon Young,Consumer
+192,CUS-00192,Carol Nelson,Corporate
+193,CUS-00193,Stephanie Campbell,Consumer
+194,CUS-00194,Cynthia Rodriguez,Home Office
+195,CUS-00195,Jonathan Johnson,Home Office
+196,CUS-00196,Patricia Garcia,Corporate
+197,CUS-00197,Sarah Parker,Consumer
+198,CUS-00198,Michael Taylor,Consumer
+199,CUS-00199,Margaret Robinson,Consumer
+200,CUS-00200,Timothy Moore,Corporate
+201,CUS-00201,Rebecca Taylor,Home Office
+202,CUS-00202,Jacob Johnson,Corporate
+203,CUS-00203,Michael Thompson,Consumer
+204,CUS-00204,Jennifer Carter,Consumer
+205,CUS-00205,Robert Flores,Consumer
+206,CUS-00206,Thomas Walker,Corporate
+207,CUS-00207,Steven Roberts,Consumer
+208,CUS-00208,Joseph Roberts,Corporate
+209,CUS-00209,Michelle Miller,Corporate
+210,CUS-00210,Michelle Torres,Corporate
+211,CUS-00211,Timothy Sanchez,Home Office
+212,CUS-00212,Betty Jones,Corporate
+213,CUS-00213,Ashley Miller,Corporate
+214,CUS-00214,Joshua Diaz,Corporate
+215,CUS-00215,Jessica Gomez,Home Office
+216,CUS-00216,Jonathan Ramirez,Corporate
+217,CUS-00217,David Allen,Corporate
+218,CUS-00218,Mary Diaz,Consumer
+219,CUS-00219,Gary Miller,Consumer
+220,CUS-00220,George Green,Home Office
+221,CUS-00221,Ryan Rivera,Consumer
+222,CUS-00222,Daniel Campbell,Corporate
+223,CUS-00223,Paul Flores,Corporate
+224,CUS-00224,Jonathan Roberts,Consumer
+225,CUS-00225,Sharon Evans,Corporate
+226,CUS-00226,Paul Lee,Home Office
+227,CUS-00227,Barbara Moore,Home Office
+228,CUS-00228,Ashley Carter,Consumer
+229,CUS-00229,Timothy Perez,Consumer
+230,CUS-00230,Dorothy Lopez,Consumer
+231,CUS-00231,Amanda Phillips,Consumer
+232,CUS-00232,Emily Hill,Corporate
+233,CUS-00233,Emily Scott,Consumer
+234,CUS-00234,Matthew Garcia,Consumer
+235,CUS-00235,Edward Young,Corporate
+236,CUS-00236,Donald Hall,Consumer
+237,CUS-00237,Gary Lewis,Corporate
+238,CUS-00238,Barbara Jackson,Consumer
+239,CUS-00239,Ashley Martin,Corporate
+240,CUS-00240,Melissa Walker,Corporate
+241,CUS-00241,Brian Ramirez,Home Office
+242,CUS-00242,Stephen Perez,Consumer
+243,CUS-00243,Ryan Moore,Consumer
+244,CUS-00244,Sandra Davis,Corporate
+245,CUS-00245,Kenneth Davis,Corporate
+246,CUS-00246,Nancy Gonzalez,Consumer
+247,CUS-00247,Kathleen Moore,Corporate
+248,CUS-00248,Shirley Hill,Consumer
+249,CUS-00249,Richard Turner,Consumer
+250,CUS-00250,Sandra White,Consumer
+251,CUS-00251,Mary Rivera,Corporate
+252,CUS-00252,Michael Scott,Consumer
+253,CUS-00253,Mary Torres,Consumer
+254,CUS-00254,Kathleen Lewis,Consumer
+255,CUS-00255,Kathleen Davis,Home Office
+256,CUS-00256,Stephanie Young,Consumer
+257,CUS-00257,Michael Martinez,Consumer
+258,CUS-00258,Joshua Garcia,Home Office
+259,CUS-00259,Jessica Scott,Corporate
+260,CUS-00260,Mark Roberts,Corporate
+261,CUS-00261,Laura Lewis,Consumer
+262,CUS-00262,Jason Martin,Corporate
+263,CUS-00263,Linda Flores,Home Office
+264,CUS-00264,Richard Carter,Consumer
+265,CUS-00265,Margaret Taylor,Corporate
+266,CUS-00266,Christopher Thomas,Consumer
+267,CUS-00267,Elizabeth Hernandez,Consumer
+268,CUS-00268,Laura Hall,Corporate
+269,CUS-00269,Donna Williams,Consumer
+270,CUS-00270,Andrew Hall,Home Office
+271,CUS-00271,Elizabeth Baker,Consumer
+272,CUS-00272,Kimberly Gomez,Corporate
+273,CUS-00273,Betty Ramirez,Consumer
+274,CUS-00274,Mark Adams,Consumer
+275,CUS-00275,Paul Evans,Consumer
+276,CUS-00276,Michelle Hill,Corporate
+277,CUS-00277,Andrew Lewis,Consumer
+278,CUS-00278,Joshua Hall,Consumer
+279,CUS-00279,Paul Allen,Corporate
+280,CUS-00280,Jeffrey Garcia,Corporate
+281,CUS-00281,Sharon Mitchell,Consumer
+282,CUS-00282,Steven Johnson,Consumer
+283,CUS-00283,Robert Carter,Corporate
+284,CUS-00284,Paul Torres,Consumer
+285,CUS-00285,Daniel Walker,Consumer
+286,CUS-00286,Jeffrey Moore,Consumer
+287,CUS-00287,Sharon Green,Corporate
+288,CUS-00288,Barbara Walker,Consumer
+289,CUS-00289,Kevin Lee,Corporate
+290,CUS-00290,Christopher Perez,Consumer
+291,CUS-00291,Amy Jackson,Corporate
+292,CUS-00292,Stephanie Evans,Corporate
+293,CUS-00293,John Robinson,Consumer
+294,CUS-00294,Steven Lee,Consumer
+295,CUS-00295,Stephanie Parker,Consumer
+296,CUS-00296,James Nelson,Home Office
+297,CUS-00297,Michael Gonzalez,Consumer
+298,CUS-00298,Amy Green,Consumer
+299,CUS-00299,Michael Wilson,Consumer
+300,CUS-00300,Thomas Jackson,Consumer
+301,CUS-00301,Gary Davis,Consumer
+302,CUS-00302,Donald Rivera,Consumer
+303,CUS-00303,Stephen Smith,Corporate
+304,CUS-00304,Barbara Anderson,Home Office
+305,CUS-00305,Joseph Robinson,Home Office
+306,CUS-00306,Karen Young,Home Office
+307,CUS-00307,Donna Allen,Corporate
+308,CUS-00308,Rebecca Turner,Consumer
+309,CUS-00309,Ryan Scott,Consumer
+310,CUS-00310,Matthew Hill,Consumer
+311,CUS-00311,David Moore,Corporate
+312,CUS-00312,Rebecca Perez,Home Office
+313,CUS-00313,Nicholas Moore,Home Office
+314,CUS-00314,Andrew Campbell,Consumer
+315,CUS-00315,Gary Parker,Consumer
+316,CUS-00316,Jonathan Walker,Consumer
+317,CUS-00317,Stephen Carter,Corporate
+318,CUS-00318,Matthew Hall,Consumer
+319,CUS-00319,Deborah Anderson,Home Office
+320,CUS-00320,Edward Williams,Consumer
+321,CUS-00321,Jacob Rivera,Home Office
+322,CUS-00322,Timothy Harris,Home Office
+323,CUS-00323,John Rodriguez,Consumer
+324,CUS-00324,Kevin Parker,Consumer
+325,CUS-00325,Jeffrey Miller,Corporate
+326,CUS-00326,Ryan Smith,Corporate
+327,CUS-00327,Edward Parker,Corporate
+328,CUS-00328,Karen Jones,Consumer
+329,CUS-00329,Kimberly Perez,Corporate
+330,CUS-00330,William Diaz,Consumer
+331,CUS-00331,Jonathan Harris,Home Office
+332,CUS-00332,David Thomas,Corporate
+333,CUS-00333,Andrew Anderson,Corporate
+334,CUS-00334,Sharon Miller,Corporate
+335,CUS-00335,Richard Lewis,Consumer
+336,CUS-00336,Joshua Johnson,Consumer
+337,CUS-00337,Linda Jackson,Consumer
+338,CUS-00338,Sharon Martinez,Consumer
+339,CUS-00339,Edward Torres,Corporate
+340,CUS-00340,Nancy Hernandez,Consumer
+341,CUS-00341,Timothy Flores,Corporate
+342,CUS-00342,Amy Nguyen,Consumer
+343,CUS-00343,Cynthia Green,Consumer
+344,CUS-00344,Steven Nelson,Consumer
+345,CUS-00345,Cynthia Jackson,Corporate
+346,CUS-00346,Christopher Jones,Consumer
+347,CUS-00347,Brian Nguyen,Consumer
+348,CUS-00348,Jason Hall,Consumer
+349,CUS-00349,Joshua Gonzalez,Home Office
+350,CUS-00350,Kathleen Miller,Consumer
+351,CUS-00351,Amanda Torres,Consumer
+352,CUS-00352,Donna Johnson,Home Office
+353,CUS-00353,Ronald Moore,Consumer
+354,CUS-00354,Michael Hill,Corporate
+355,CUS-00355,Andrew Roberts,Corporate
+356,CUS-00356,Amanda Anderson,Corporate
+357,CUS-00357,Steven Baker,Corporate
+358,CUS-00358,Sarah Green,Consumer
+359,CUS-00359,Jeffrey Williams,Corporate
+360,CUS-00360,Thomas Garcia,Home Office
+361,CUS-00361,Dorothy Mitchell,Consumer
+362,CUS-00362,Betty Rodriguez,Corporate
+363,CUS-00363,George King,Consumer
+364,CUS-00364,Paul Turner,Consumer
+365,CUS-00365,Kathleen Phillips,Consumer
+366,CUS-00366,Elizabeth Martinez,Corporate
+367,CUS-00367,Mark Parker,Corporate
+368,CUS-00368,Ronald Diaz,Corporate
+369,CUS-00369,George Garcia,Corporate
+370,CUS-00370,Mary Taylor,Corporate
+371,CUS-00371,Ryan White,Corporate
+372,CUS-00372,Kimberly Nguyen,Consumer
+373,CUS-00373,Melissa Miller,Corporate
+374,CUS-00374,Brenda Lee,Home Office
+375,CUS-00375,David Green,Home Office
+376,CUS-00376,Joshua Adams,Consumer
+377,CUS-00377,Sarah Williams,Home Office
+378,CUS-00378,Joshua Young,Consumer
+379,CUS-00379,Donald Wright,Consumer
+380,CUS-00380,Karen Clark,Corporate
+381,CUS-00381,Gary Flores,Consumer
+382,CUS-00382,Melissa Wilson,Consumer
+383,CUS-00383,Donald Diaz,Consumer
+384,CUS-00384,Melissa Wright,Home Office
+385,CUS-00385,Amanda Brown,Consumer
+386,CUS-00386,Matthew Davis,Home Office
+387,CUS-00387,Ryan Garcia,Corporate
+388,CUS-00388,Robert Brown,Corporate
+389,CUS-00389,Ashley Rodriguez,Corporate
+390,CUS-00390,Anthony Jones,Home Office
+391,CUS-00391,Stephen Wilson,Corporate
+392,CUS-00392,Sandra Perez,Corporate
+393,CUS-00393,James Moore,Home Office
+394,CUS-00394,Charles Rodriguez,Corporate
+395,CUS-00395,Daniel Davis,Corporate
+396,CUS-00396,Patricia Rodriguez,Consumer
+397,CUS-00397,Donald Nguyen,Consumer
+398,CUS-00398,Daniel Taylor,Consumer
+399,CUS-00399,Rebecca King,Consumer
+400,CUS-00400,David Walker,Consumer
+401,CUS-00401,George Allen,Corporate
+402,CUS-00402,Laura Allen,Consumer
+403,CUS-00403,Jennifer Campbell,Corporate
+404,CUS-00404,Eric Martin,Consumer
+405,CUS-00405,Patricia Brown,Home Office
+406,CUS-00406,Stephanie Ramirez,Corporate
+407,CUS-00407,Gary Rivera,Home Office
+408,CUS-00408,Elizabeth Garcia,Consumer
+409,CUS-00409,Charles Jones,Consumer
+410,CUS-00410,Stephen Rivera,Consumer
+411,CUS-00411,Shirley Jackson,Consumer
+412,CUS-00412,Joseph Diaz,Corporate
+413,CUS-00413,Stephen Campbell,Home Office
+414,CUS-00414,Sharon Lewis,Home Office
+415,CUS-00415,Edward Perez,Home Office
+416,CUS-00416,Stephanie Clark,Corporate
+417,CUS-00417,Kenneth Nelson,Consumer
+418,CUS-00418,Karen Baker,Home Office
+419,CUS-00419,David Garcia,Home Office
+420,CUS-00420,Barbara Ramirez,Consumer
+421,CUS-00421,Melissa Phillips,Consumer
+422,CUS-00422,Brenda Scott,Consumer
+423,CUS-00423,Jessica Clark,Consumer
+424,CUS-00424,Jason Parker,Home Office
+425,CUS-00425,Michael Jackson,Corporate
+426,CUS-00426,Amanda Miller,Corporate
+427,CUS-00427,Margaret Martinez,Corporate
+428,CUS-00428,Mark Diaz,Consumer
+429,CUS-00429,Brenda White,Consumer
+430,CUS-00430,Emily Torres,Consumer
+431,CUS-00431,Jason Diaz,Corporate
+432,CUS-00432,Brenda Johnson,Corporate
+433,CUS-00433,Paul Johnson,Consumer
+434,CUS-00434,Michelle Perez,Consumer
+435,CUS-00435,Nancy Parker,Consumer
+436,CUS-00436,Stephanie Jones,Consumer
+437,CUS-00437,Shirley Wilson,Consumer
+438,CUS-00438,Ryan Perez,Consumer
+439,CUS-00439,Michelle Campbell,Consumer
+440,CUS-00440,William Brown,Consumer
+441,CUS-00441,Michael Baker,Consumer
+442,CUS-00442,Jeffrey Nelson,Consumer
+443,CUS-00443,Jeffrey Clark,Consumer
+444,CUS-00444,Joseph Jackson,Corporate
+445,CUS-00445,Gary King,Corporate
+446,CUS-00446,Jennifer Anderson,Consumer
+447,CUS-00447,Linda Smith,Consumer
+448,CUS-00448,Margaret Roberts,Consumer
+449,CUS-00449,Steven Jackson,Consumer
+450,CUS-00450,James Young,Corporate
+451,CUS-00451,Daniel Rodriguez,Consumer
+452,CUS-00452,Brenda Turner,Corporate
+453,CUS-00453,Amanda Jones,Consumer
+454,CUS-00454,Jennifer Ramirez,Consumer
+455,CUS-00455,Elizabeth Parker,Consumer
+456,CUS-00456,Jason Torres,Consumer
+457,CUS-00457,Rebecca Jackson,Consumer
+458,CUS-00458,Robert Lee,Consumer
+459,CUS-00459,Ryan Turner,Corporate
+460,CUS-00460,Sharon Diaz,Consumer
+461,CUS-00461,Sharon Nguyen,Consumer
+462,CUS-00462,William Sanchez,Home Office
+463,CUS-00463,Carol Anderson,Consumer
+464,CUS-00464,Lisa Jones,Consumer
+465,CUS-00465,Joseph King,Consumer
+466,CUS-00466,Brian Thompson,Corporate
+467,CUS-00467,Charles Thomas,Consumer
+468,CUS-00468,Steven Gonzalez,Consumer
+469,CUS-00469,Karen Carter,Corporate
+470,CUS-00470,Elizabeth Lopez,Home Office
+471,CUS-00471,Amy Robinson,Corporate
+472,CUS-00472,Laura Baker,Home Office
+473,CUS-00473,Dorothy Parker,Home Office
+474,CUS-00474,Kenneth Martinez,Consumer
+475,CUS-00475,Joshua Gomez,Consumer
+476,CUS-00476,Linda Thompson,Consumer
+477,CUS-00477,Michelle Robinson,Consumer
+478,CUS-00478,Linda White,Home Office
+479,CUS-00479,Elizabeth Adams,Home Office
+480,CUS-00480,Barbara Flores,Corporate
+481,CUS-00481,Deborah Robinson,Corporate
+482,CUS-00482,Jennifer Lewis,Home Office
+483,CUS-00483,Matthew Lee,Corporate
+484,CUS-00484,Nicholas Martinez,Home Office
+485,CUS-00485,Laura Miller,Corporate
+486,CUS-00486,Carol Rivera,Consumer
+487,CUS-00487,Daniel Williams,Consumer
+488,CUS-00488,Jeffrey Lewis,Corporate
+489,CUS-00489,Christopher White,Consumer
+490,CUS-00490,Andrew Harris,Consumer
+491,CUS-00491,Carol Baker,Corporate
+492,CUS-00492,Kevin Miller,Corporate
+493,CUS-00493,Deborah Jackson,Consumer
+494,CUS-00494,Karen Perez,Consumer
+495,CUS-00495,Charles Thompson,Consumer
+496,CUS-00496,Ronald Rodriguez,Corporate
+497,CUS-00497,William Martin,Corporate
+498,CUS-00498,Kevin Evans,Consumer
+499,CUS-00499,Shirley Garcia,Corporate
+500,CUS-00500,Jason Allen,Consumer
+501,CUS-00501,George Martin,Consumer
+502,CUS-00502,Margaret Perez,Home Office
+503,CUS-00503,Gary Gonzalez,Consumer
+504,CUS-00504,Sarah Martinez,Consumer
+505,CUS-00505,Richard Allen,Corporate
+506,CUS-00506,Shirley Williams,Corporate
+507,CUS-00507,Thomas Hill,Consumer
+508,CUS-00508,Christopher Lopez,Home Office
+509,CUS-00509,Lisa Campbell,Consumer
+510,CUS-00510,Edward White,Corporate
+511,CUS-00511,Donald Lewis,Corporate
+512,CUS-00512,Laura Anderson,Corporate
+513,CUS-00513,Michelle Phillips,Corporate
+514,CUS-00514,Matthew White,Corporate
+515,CUS-00515,Jeffrey Robinson,Corporate
+516,CUS-00516,Timothy Allen,Corporate
+517,CUS-00517,Christopher Evans,Consumer
+518,CUS-00518,Steven Brown,Corporate
+519,CUS-00519,Melissa Scott,Home Office
+520,CUS-00520,Eric Diaz,Consumer
+521,CUS-00521,William Carter,Consumer
+522,CUS-00522,Charles Turner,Consumer
+523,CUS-00523,Mark Evans,Consumer
+524,CUS-00524,Brian Johnson,Consumer
+525,CUS-00525,Ronald Allen,Consumer
+526,CUS-00526,Deborah Garcia,Consumer
+527,CUS-00527,Patricia Lee,Home Office
+528,CUS-00528,John Jackson,Home Office
+529,CUS-00529,Jacob Hall,Home Office
+530,CUS-00530,James Garcia,Consumer
+531,CUS-00531,Margaret Turner,Consumer
+532,CUS-00532,Shirley Ramirez,Consumer
+533,CUS-00533,Joshua Davis,Consumer
+534,CUS-00534,Rebecca Green,Corporate
+535,CUS-00535,Ryan Jones,Consumer
+536,CUS-00536,Amy Hill,Corporate
+537,CUS-00537,Angela Torres,Consumer
+538,CUS-00538,Charles Jackson,Consumer
+539,CUS-00539,Amanda Thomas,Corporate
+540,CUS-00540,Nancy Nelson,Corporate
+541,CUS-00541,Shirley White,Consumer
+542,CUS-00542,Shirley Wright,Consumer
+543,CUS-00543,Nicholas Scott,Consumer
+544,CUS-00544,Jacob Williams,Corporate
+545,CUS-00545,Melissa Taylor,Corporate
+546,CUS-00546,Amanda Gomez,Consumer
+547,CUS-00547,Donald Campbell,Corporate
+548,CUS-00548,Kevin Rodriguez,Consumer
+549,CUS-00549,Anna Perez,Corporate
+550,CUS-00550,Daniel Turner,Corporate
+551,CUS-00551,Cynthia Hall,Consumer
+552,CUS-00552,Nancy Phillips,Consumer
+553,CUS-00553,Ryan Williams,Consumer
+554,CUS-00554,Jennifer Gomez,Consumer
+555,CUS-00555,Jennifer Lee,Home Office
+556,CUS-00556,Anna Walker,Consumer
+557,CUS-00557,Matthew Jackson,Consumer
+558,CUS-00558,Michael Parker,Corporate
+559,CUS-00559,Paul Davis,Corporate
+560,CUS-00560,Sharon Sanchez,Corporate
+561,CUS-00561,Deborah Perez,Home Office
+562,CUS-00562,Amy Hall,Consumer
+563,CUS-00563,Eric Moore,Corporate
+564,CUS-00564,Jason Garcia,Consumer
+565,CUS-00565,Nancy Wright,Consumer
+566,CUS-00566,Susan Garcia,Consumer
+567,CUS-00567,Donna Martin,Consumer
+568,CUS-00568,Jason Hernandez,Corporate
+569,CUS-00569,Brian Lewis,Consumer
+570,CUS-00570,Amanda Flores,Home Office
+571,CUS-00571,Emily Green,Home Office
+572,CUS-00572,Linda Jones,Corporate
+573,CUS-00573,Stephanie White,Consumer
+574,CUS-00574,Christopher Johnson,Consumer
+575,CUS-00575,Thomas Jones,Consumer
+576,CUS-00576,George White,Consumer
+577,CUS-00577,John Hill,Consumer
+578,CUS-00578,Laura White,Consumer
+579,CUS-00579,Elizabeth Torres,Consumer
+580,CUS-00580,George Sanchez,Consumer
+581,CUS-00581,Emily Thomas,Home Office
+582,CUS-00582,Patricia Mitchell,Consumer
+583,CUS-00583,Eric Harris,Home Office
+584,CUS-00584,Jessica Taylor,Corporate
+585,CUS-00585,Laura Wilson,Home Office
+586,CUS-00586,Jessica Rodriguez,Home Office
+587,CUS-00587,Laura Lopez,Home Office
+588,CUS-00588,Brian Rivera,Consumer
+589,CUS-00589,Anna Jackson,Home Office
+590,CUS-00590,Christopher Rivera,Corporate
+591,CUS-00591,Daniel Gomez,Consumer
+592,CUS-00592,Mark Davis,Home Office
+593,CUS-00593,Sarah Thomas,Corporate
+594,CUS-00594,Patricia White,Corporate
+595,CUS-00595,Melissa Robinson,Corporate
+596,CUS-00596,Barbara Jones,Consumer
+597,CUS-00597,Kathleen King,Consumer
+598,CUS-00598,Edward Evans,Corporate
+599,CUS-00599,Thomas Lee,Corporate
+600,CUS-00600,Laura Robinson,Corporate
+601,CUS-00601,Brian Rodriguez,Home Office
+602,CUS-00602,Stephen Green,Corporate
+603,CUS-00603,Thomas Ramirez,Consumer
+604,CUS-00604,Linda Turner,Consumer
+605,CUS-00605,Karen Martin,Consumer
+606,CUS-00606,Dorothy Rivera,Consumer
+607,CUS-00607,Eric Jackson,Home Office
+608,CUS-00608,Stephen Moore,Consumer
+609,CUS-00609,Joshua Flores,Corporate
+610,CUS-00610,Nicholas Adams,Consumer
+611,CUS-00611,Karen Hernandez,Corporate
+612,CUS-00612,Carol Turner,Home Office
+613,CUS-00613,Jennifer Evans,Home Office
+614,CUS-00614,William Williams,Home Office
+615,CUS-00615,Kimberly Adams,Consumer
+616,CUS-00616,Rebecca Flores,Corporate
+617,CUS-00617,Joshua Walker,Consumer
+618,CUS-00618,Stephanie Martin,Consumer
+619,CUS-00619,Kathleen Robinson,Consumer
+620,CUS-00620,Charles Lee,Home Office
+621,CUS-00621,Kenneth Campbell,Home Office
+622,CUS-00622,Brian Sanchez,Consumer
+623,CUS-00623,Melissa Allen,Corporate
+624,CUS-00624,Cynthia Davis,Consumer
+625,CUS-00625,Ashley Martinez,Consumer
+626,CUS-00626,Donna Harris,Home Office
+627,CUS-00627,Rebecca Thomas,Home Office
+628,CUS-00628,Dorothy Torres,Corporate
+629,CUS-00629,Matthew Carter,Consumer
+630,CUS-00630,Angela Robinson,Consumer
+631,CUS-00631,Michelle Young,Consumer
+632,CUS-00632,Ryan Thomas,Consumer
+633,CUS-00633,Jacob Jackson,Corporate
+634,CUS-00634,Susan Ramirez,Consumer
+635,CUS-00635,Kimberly Campbell,Consumer
+636,CUS-00636,Jennifer Sanchez,Consumer
+637,CUS-00637,George Scott,Consumer
+638,CUS-00638,Deborah Allen,Consumer
+639,CUS-00639,Richard Sanchez,Consumer
+640,CUS-00640,Carol Scott,Home Office
+641,CUS-00641,Charles Gonzalez,Corporate
+642,CUS-00642,Stephanie Allen,Consumer
+643,CUS-00643,Kevin Phillips,Consumer
+644,CUS-00644,Ryan Martinez,Corporate
+645,CUS-00645,Angela Rodriguez,Consumer
+646,CUS-00646,Kenneth Hernandez,Consumer
+647,CUS-00647,Joshua Nguyen,Consumer
+648,CUS-00648,Angela Wright,Consumer
+649,CUS-00649,Robert White,Consumer
+650,CUS-00650,Joseph Clark,Corporate
+651,CUS-00651,Patricia Hill,Consumer
+652,CUS-00652,Sandra Campbell,Consumer
+653,CUS-00653,Kathleen Hernandez,Corporate
+654,CUS-00654,Timothy Martinez,Home Office
+655,CUS-00655,Ashley Williams,Corporate
+656,CUS-00656,Joseph Gonzalez,Consumer
+657,CUS-00657,Kenneth Clark,Consumer
+658,CUS-00658,Anthony Clark,Consumer
+659,CUS-00659,Jacob Parker,Home Office
+660,CUS-00660,Linda Rivera,Consumer
+661,CUS-00661,Anthony Scott,Consumer
+662,CUS-00662,Timothy Lee,Home Office
+663,CUS-00663,Carol Wright,Consumer
+664,CUS-00664,Kimberly Flores,Consumer
+665,CUS-00665,Brenda Martin,Consumer
+666,CUS-00666,Joshua Roberts,Consumer
+667,CUS-00667,Anthony Hall,Corporate
+668,CUS-00668,Kenneth Walker,Consumer
+669,CUS-00669,Emily Jackson,Consumer
+670,CUS-00670,Anna Harris,Home Office
+671,CUS-00671,Ronald Evans,Consumer
+672,CUS-00672,Jennifer Jackson,Home Office
+673,CUS-00673,William Thompson,Home Office
+674,CUS-00674,Steven Mitchell,Consumer
+675,CUS-00675,Betty Evans,Corporate
+676,CUS-00676,Brenda Hall,Consumer
+677,CUS-00677,Susan Flores,Corporate
+678,CUS-00678,Donald Thomas,Consumer
+679,CUS-00679,Shirley Anderson,Corporate
+680,CUS-00680,Michael Miller,Consumer
+681,CUS-00681,Jacob Miller,Corporate
+682,CUS-00682,Sarah Smith,Home Office
+683,CUS-00683,Christopher Clark,Corporate
+684,CUS-00684,Jacob Walker,Corporate
+685,CUS-00685,Andrew Lee,Consumer
+686,CUS-00686,Linda Roberts,Consumer
+687,CUS-00687,Sandra Wright,Corporate
+688,CUS-00688,John Lopez,Consumer
+689,CUS-00689,Ronald Gomez,Consumer
+690,CUS-00690,Mary Martin,Corporate
+691,CUS-00691,Susan Perez,Consumer
+692,CUS-00692,Anna King,Consumer
+693,CUS-00693,Sarah Diaz,Consumer
+694,CUS-00694,Paul Gonzalez,Corporate
+695,CUS-00695,Kevin Hernandez,Corporate
+696,CUS-00696,Steven Rivera,Consumer
+697,CUS-00697,Carol Gomez,Consumer
+698,CUS-00698,Matthew Lopez,Corporate
+699,CUS-00699,Dorothy Garcia,Consumer
+700,CUS-00700,Richard Lopez,Home Office
+701,CUS-00701,Kathleen Lee,Home Office
+702,CUS-00702,James Taylor,Consumer
+703,CUS-00703,Laura Carter,Consumer
+704,CUS-00704,Kevin Martin,Corporate
+705,CUS-00705,George Hall,Consumer
+706,CUS-00706,Jessica Robinson,Consumer
+707,CUS-00707,Stephanie Baker,Consumer
+708,CUS-00708,Michelle Hall,Consumer
+709,CUS-00709,Donna White,Corporate
+710,CUS-00710,Kathleen Martinez,Consumer
+711,CUS-00711,Melissa Clark,Corporate
+712,CUS-00712,Jacob Carter,Corporate
+713,CUS-00713,Margaret Carter,Consumer
+714,CUS-00714,William King,Consumer
+715,CUS-00715,George Jones,Home Office
+716,CUS-00716,Joseph Brown,Home Office
+717,CUS-00717,Nicholas Gonzalez,Corporate
+718,CUS-00718,Dorothy Diaz,Corporate
+719,CUS-00719,Joseph Baker,Consumer
+720,CUS-00720,Gary Garcia,Home Office
+721,CUS-00721,Laura Phillips,Consumer
+722,CUS-00722,Thomas Allen,Consumer
+723,CUS-00723,Linda Scott,Consumer
+724,CUS-00724,Robert Sanchez,Consumer
+725,CUS-00725,James Mitchell,Consumer
+726,CUS-00726,Elizabeth Williams,Consumer
+727,CUS-00727,David Wright,Home Office
+728,CUS-00728,Edward Lopez,Corporate
+729,CUS-00729,Rebecca White,Home Office
+730,CUS-00730,Timothy Lewis,Home Office
+731,CUS-00731,William Baker,Home Office
+732,CUS-00732,Brian Davis,Consumer
+733,CUS-00733,Jonathan Sanchez,Corporate
+734,CUS-00734,Mark Turner,Consumer
+735,CUS-00735,Robert Martin,Consumer
+736,CUS-00736,Anna Ramirez,Corporate
+737,CUS-00737,Sandra Thomas,Consumer
+738,CUS-00738,Karen Moore,Consumer
+739,CUS-00739,Joseph Williams,Corporate
+740,CUS-00740,Robert Thomas,Consumer
+741,CUS-00741,Richard Hill,Consumer
+742,CUS-00742,Michael Thomas,Corporate
+743,CUS-00743,Stephanie Lewis,Consumer
+744,CUS-00744,Linda Rodriguez,Consumer
+745,CUS-00745,Donna Anderson,Corporate
+746,CUS-00746,Kenneth Torres,Corporate
+747,CUS-00747,Dorothy Thomas,Consumer
+748,CUS-00748,Charles Nelson,Corporate
+749,CUS-00749,Edward Martin,Consumer
+750,CUS-00750,Brenda Nguyen,Home Office
+751,CUS-00751,Daniel Green,Corporate
+752,CUS-00752,Brenda Young,Consumer
+753,CUS-00753,Brian Adams,Corporate
+754,CUS-00754,Shirley Lee,Corporate
+755,CUS-00755,Edward Martinez,Consumer
+756,CUS-00756,Nancy Carter,Corporate
+757,CUS-00757,Mark Martin,Home Office
+758,CUS-00758,Charles Phillips,Consumer
+759,CUS-00759,Edward Clark,Corporate
+760,CUS-00760,Sarah Harris,Consumer
+761,CUS-00761,Anthony Perez,Corporate
+762,CUS-00762,Laura Diaz,Consumer
+763,CUS-00763,Matthew Brown,Consumer
+764,CUS-00764,Jennifer Parker,Consumer
+765,CUS-00765,Brenda Wilson,Consumer
+766,CUS-00766,Mary Wilson,Home Office
+767,CUS-00767,Jessica Mitchell,Home Office
+768,CUS-00768,Kathleen Thomas,Corporate
+769,CUS-00769,Anthony Sanchez,Home Office
+770,CUS-00770,Stephen Lee,Corporate
+771,CUS-00771,Timothy Robinson,Corporate
+772,CUS-00772,Kimberly White,Consumer
+773,CUS-00773,Richard Phillips,Home Office
+774,CUS-00774,Melissa Lee,Consumer
+775,CUS-00775,Mark Mitchell,Consumer
+776,CUS-00776,Kimberly Scott,Home Office
+777,CUS-00777,Kevin Anderson,Consumer
+778,CUS-00778,Ashley Young,Corporate
+779,CUS-00779,Carol Taylor,Corporate
+780,CUS-00780,Gary Campbell,Corporate
+781,CUS-00781,Gary Robinson,Consumer
+782,CUS-00782,Amanda Hernandez,Consumer
+783,CUS-00783,Anna Young,Consumer
+784,CUS-00784,Anna Adams,Home Office
+785,CUS-00785,Elizabeth Evans,Corporate
+786,CUS-00786,James Clark,Consumer
+787,CUS-00787,Sandra Jones,Corporate
+788,CUS-00788,Nicholas Robinson,Consumer
+789,CUS-00789,Kathleen Nelson,Consumer
+790,CUS-00790,James Wright,Corporate
+791,CUS-00791,Mary Johnson,Corporate
+792,CUS-00792,Emily Wright,Home Office
+793,CUS-00793,Robert Allen,Corporate
+794,CUS-00794,Sharon Phillips,Home Office
+795,CUS-00795,Daniel Miller,Home Office
+796,CUS-00796,Shirley Martinez,Consumer
+797,CUS-00797,Amanda Moore,Corporate
+798,CUS-00798,William White,Home Office
+799,CUS-00799,Ryan Torres,Consumer
+800,CUS-00800,William Adams,Home Office
+801,CUS-00801,John Garcia,Consumer
+802,CUS-00802,Timothy Scott,Consumer
+803,CUS-00803,Mary Hall,Consumer
+804,CUS-00804,Amy Diaz,Consumer
+805,CUS-00805,Kevin Torres,Home Office
+806,CUS-00806,Richard King,Home Office
+807,CUS-00807,Sandra Wilson,Home Office
+808,CUS-00808,Jacob Moore,Consumer
+809,CUS-00809,Kenneth Johnson,Home Office
+810,CUS-00810,Charles Carter,Home Office
+811,CUS-00811,Ronald Jones,Consumer
+812,CUS-00812,Donald Torres,Home Office
+813,CUS-00813,Deborah Baker,Home Office
+814,CUS-00814,Kevin Harris,Corporate
+815,CUS-00815,Sarah Gomez,Home Office
+816,CUS-00816,William Allen,Corporate
+817,CUS-00817,Brian Brown,Consumer
+818,CUS-00818,Sandra Turner,Consumer
+819,CUS-00819,Ronald Roberts,Consumer
+820,CUS-00820,Paul Gomez,Home Office
+821,CUS-00821,Gary Anderson,Consumer
+822,CUS-00822,Timothy Ramirez,Consumer
+823,CUS-00823,Donna Phillips,Consumer
+824,CUS-00824,Paul Martinez,Consumer
+825,CUS-00825,Karen Mitchell,Consumer
+826,CUS-00826,George Miller,Consumer
+827,CUS-00827,Michelle Lewis,Consumer
+828,CUS-00828,Paul Miller,Consumer
+829,CUS-00829,Nancy Ramirez,Consumer
+830,CUS-00830,Brenda Allen,Consumer
+831,CUS-00831,Amanda Scott,Consumer
+832,CUS-00832,Deborah Smith,Consumer
+833,CUS-00833,Deborah Roberts,Consumer
+834,CUS-00834,Brenda Thomas,Corporate
+835,CUS-00835,Lisa Baker,Consumer
+836,CUS-00836,Sarah Moore,Consumer
+837,CUS-00837,Amy Martinez,Consumer
+838,CUS-00838,Sharon Moore,Consumer
+839,CUS-00839,Kathleen Gomez,Consumer
+840,CUS-00840,Steven Thomas,Corporate
+841,CUS-00841,Betty Robinson,Consumer
+842,CUS-00842,Joshua Smith,Home Office
+843,CUS-00843,Kevin Turner,Corporate
+844,CUS-00844,Kevin Lewis,Consumer
+845,CUS-00845,Sarah Martin,Consumer
+846,CUS-00846,Betty Walker,Consumer
+847,CUS-00847,Ronald Lee,Consumer
+848,CUS-00848,Gary Torres,Corporate
+849,CUS-00849,Dorothy Harris,Consumer
+850,CUS-00850,Ronald White,Consumer

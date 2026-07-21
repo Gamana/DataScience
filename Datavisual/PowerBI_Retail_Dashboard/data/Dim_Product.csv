@@ -1,0 +1,33 @@
+ProductKey,Product ID,Product Name,Product Category,Sub Category,List Price,Base Margin
+1,PRD-0001,Office Chair Ergonomic,Furniture,Chairs,249.99,0.28
+2,PRD-0002,Executive Desk Oak,Furniture,Tables,599.0,0.32
+3,PRD-0003,Conference Table 8-Seat,Furniture,Tables,1299.0,0.25
+4,PRD-0004,Bookshelf 5-Tier,Furniture,Bookcases,189.99,0.3
+5,PRD-0005,Filing Cabinet Metal,Furniture,Storage,159.99,0.27
+6,PRD-0006,Sofa Sectional Gray,Furniture,Furnishings,899.0,0.22
+7,PRD-0007,Standing Desk Adjustable,Furniture,Tables,449.0,0.35
+8,PRD-0008,Guest Chair Mesh,Furniture,Chairs,129.99,0.26
+9,PRD-0009,Laptop Pro 15-inch,Technology,Computers,1299.0,0.18
+10,PRD-0010,Wireless Mouse Ergonomic,Technology,Accessories,29.99,0.42
+11,PRD-0011,USB-C Hub 7-in-1,Technology,Accessories,49.99,0.38
+12,PRD-0012,Monitor 27-inch 4K,Technology,Computers,449.0,0.2
+13,PRD-0013,Mechanical Keyboard RGB,Technology,Accessories,89.99,0.35
+14,PRD-0014,Smartphone Case Premium,Technology,Phones,24.99,0.5
+15,PRD-0015,Webcam HD 1080p,Technology,Accessories,79.99,0.33
+16,PRD-0016,Tablet 10-inch,Technology,Computers,399.0,0.22
+17,PRD-0017,Bluetooth Headphones,Technology,Accessories,149.99,0.28
+18,PRD-0018,External SSD 1TB,Technology,Accessories,119.99,0.3
+19,PRD-0019,Printer Paper A4 Ream,Office Supplies,Paper,8.99,0.45
+20,PRD-0020,Ballpoint Pens Pack 12,Office Supplies,Art,6.49,0.48
+21,PRD-0021,Stapler Heavy Duty,Office Supplies,Fasteners,14.99,0.4
+22,PRD-0022,Binders Pack of 5,Office Supplies,Binders,12.99,0.42
+23,PRD-0023,Sticky Notes Assorted,Office Supplies,Labels,5.99,0.5
+24,PRD-0024,Whiteboard Markers Set,Office Supplies,Art,9.99,0.44
+25,PRD-0025,Desk Organizer Bamboo,Office Supplies,Storage,34.99,0.36
+26,PRD-0026,Envelopes Box 100,Office Supplies,Envelopes,11.99,0.41
+27,PRD-0027,Toner Cartridge Black,Office Supplies,Appliances,69.99,0.25
+28,PRD-0028,Scissors Titanium,Office Supplies,Fasteners,12.49,0.38
+29,PRD-0029,Lounge Chair Leather,Furniture,Chairs,749.0,0.24
+30,PRD-0030,Coffee Table Glass,Furniture,Tables,279.0,0.29
+31,PRD-0031,Smart Watch Series X,Technology,Phones,299.0,0.21
+32,PRD-0032,Wireless Charger Pad,Technology,Accessories,39.99,0.4

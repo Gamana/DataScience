@@ -1,0 +1,41 @@
+GeoKey,Region,Country,State,City,Latitude,Longitude
+1,East,United States,New York,New York City,40.7128,-74.006
+2,East,United States,New York,Buffalo,42.8864,-78.8784
+3,East,United States,Massachusetts,Boston,42.3601,-71.0589
+4,East,United States,Pennsylvania,Philadelphia,39.9526,-75.1652
+5,East,United States,Pennsylvania,Pittsburgh,40.4406,-79.9959
+6,East,United States,New Jersey,Newark,40.7357,-74.1724
+7,East,United States,Maryland,Baltimore,39.2904,-76.6122
+8,East,United States,Virginia,Richmond,37.5407,-77.436
+9,East,United States,Florida,Miami,25.7617,-80.1918
+10,East,United States,Florida,Orlando,28.5383,-81.3792
+11,East,United States,Georgia,Atlanta,33.749,-84.388
+12,East,United States,North Carolina,Charlotte,35.2271,-80.8431
+13,Central,United States,Illinois,Chicago,41.8781,-87.6298
+14,Central,United States,Illinois,Springfield,39.7817,-89.6501
+15,Central,United States,Texas,Houston,29.7604,-95.3698
+16,Central,United States,Texas,Dallas,32.7767,-96.797
+17,Central,United States,Texas,Austin,30.2672,-97.7431
+18,Central,United States,Ohio,Columbus,39.9612,-82.9988
+19,Central,United States,Ohio,Cleveland,41.4993,-81.6944
+20,Central,United States,Michigan,Detroit,42.3314,-83.0458
+21,Central,United States,Minnesota,Minneapolis,44.9778,-93.265
+22,Central,United States,Missouri,Kansas City,39.0997,-94.5786
+23,Central,United States,Wisconsin,Milwaukee,43.0389,-87.9065
+24,Central,United States,Indiana,Indianapolis,39.7684,-86.1581
+25,West,United States,California,Los Angeles,34.0522,-118.2437
+26,West,United States,California,San Francisco,37.7749,-122.4194
+27,West,United States,California,San Diego,32.7157,-117.1611
+28,West,United States,California,Sacramento,38.5816,-121.4944
+29,West,United States,Washington,Seattle,47.6062,-122.3321
+30,West,United States,Oregon,Portland,45.5152,-122.6784
+31,West,United States,Colorado,Denver,39.7392,-104.9903
+32,West,United States,Arizona,Phoenix,33.4484,-112.074
+33,West,United States,Nevada,Las Vegas,36.1699,-115.1398
+34,West,United States,Utah,Salt Lake City,40.7608,-111.891
+35,South,United States,Tennessee,Nashville,36.1627,-86.7816
+36,South,United States,Louisiana,New Orleans,29.9511,-90.0715
+37,South,United States,Alabama,Birmingham,33.5207,-86.8025
+38,South,United States,South Carolina,Charleston,32.7765,-79.9311
+39,South,United States,Kentucky,Louisville,38.2527,-85.7585
+40,South,United States,Oklahoma,Oklahoma City,35.4676,-97.5164

@@ -1,0 +1,186 @@
+/*
+================================================================================
+  RETAIL SALES DASHBOARD — DAX MEASURES
+  Place these measures in a dedicated table: _Measures (recommended)
+  Or create them under Fact_Sales.
+================================================================================
+
+  HOW TO CREATE A MEASURES TABLE IN POWER BI:
+  1. Enter Data → create a blank table named "_Measures" with one column "Name"
+  2. Hide the column (optional)
+  3. Right-click the table → New measure → paste each measure below
+
+  MARK Dim_Date AS DATE TABLE:
+  Model view → select Dim_Date → Table tools → Mark as date table → Date column
+================================================================================
+*/
+
+/* -------------------------------------------------------------------------- */
+/*  CORE AGGREGATES                                                           */
+/* -------------------------------------------------------------------------- */
+
+Total Sales =
+SUM ( Fact_Sales[Sales] )
+
+Total Profit =
+SUM ( Fact_Sales[Profit] )
+
+Total Orders =
+DISTINCTCOUNT ( Fact_Sales[Order ID] )
+
+Total Quantity =
+SUM ( Fact_Sales[Quantity] )
+
+Average Sales =
+AVERAGE ( Fact_Sales[Sales] )
+
+Average Profit =
+AVERAGE ( Fact_Sales[Profit] )
+
+Profit Margin % =
+DIVIDE ( [Total Profit], [Total Sales], 0 )
+
+Customer Count =
+DISTINCTCOUNT ( Fact_Sales[CustomerKey] )
+-- If using flat table only:
+-- DISTINCTCOUNT ( Fact_Sales[Customer ID] )
+
+Average Order Value =
+DIVIDE ( [Total Sales], [Total Orders], 0 )
+
+/* -------------------------------------------------------------------------- */
+/*  TARGETS & KPI ACHIEVEMENT                                                 */
+/*  Dim_Targets has Year, Sales Target, Profit Target                         */
+/*  Relate Dim_Targets[Year] → Dim_Date[Year] (Many-to-One) OR use LOOKUP     */
+/* -------------------------------------------------------------------------- */
+
+Sales Target =
+VAR SelectedYears =
+    VALUES ( Dim_Date[Year] )
+RETURN
+    CALCULATE (
+        SUM ( Dim_Targets[Sales Target] ),
+        Dim_Targets[Year] IN SelectedYears
+    )
+
+-- Fallback if Targets table is not filtered by date relationship:
+-- Sales Target Fixed =
+-- CALCULATE ( SUM ( Dim_Targets[Sales Target] ) )
+
+Profit Target =
+VAR SelectedYears =
+    VALUES ( Dim_Date[Year] )
+RETURN
+    CALCULATE (
+        SUM ( Dim_Targets[Profit Target] ),
+        Dim_Targets[Year] IN SelectedYears
+    )
+
+Sales Achievement % =
+DIVIDE ( [Total Sales], [Sales Target], 0 )
+
+Profit Achievement % =
+DIVIDE ( [Total Profit], [Profit Target], 0 )
+
+/* -------------------------------------------------------------------------- */
+/*  TIME INTELLIGENCE                                                         */
+/*  Requires Dim_Date marked as Date Table and relationship to Fact_Sales     */
+/* -------------------------------------------------------------------------- */
+
+Year-to-Date Sales =
+TOTALYTD ( [Total Sales], Dim_Date[Date] )
+
+Month-to-Date Sales =
+TOTALMTD ( [Total Sales], Dim_Date[Date] )
+
+Previous Month Sales =
+CALCULATE (
+    [Total Sales],
+    DATEADD ( Dim_Date[Date], -1, MONTH )
+)
+
+Sales Growth % =
+VAR CurrentSales = [Total Sales]
+VAR PriorSales = [Previous Month Sales]
+RETURN
+    DIVIDE ( CurrentSales - PriorSales, PriorSales, 0 )
+
+/* Optional extras useful for teaching */
+Previous Year Sales =
+CALCULATE (
+    [Total Sales],
+    SAMEPERIODLASTYEAR ( Dim_Date[Date] )
+)
+
+YoY Sales Growth % =
+DIVIDE ( [Total Sales] - [Previous Year Sales], [Previous Year Sales], 0 )
+
+/* -------------------------------------------------------------------------- */
+/*  DYNAMIC TITLE & DATE DISPLAY (use in Card / Text box via Measure)          */
+/* -------------------------------------------------------------------------- */
+
+Dynamic Report Title =
+VAR SelectedYear =
+    IF (
+        HASONEVALUE ( Dim_Date[Year] ),
+        " — " & SELECTEDVALUE ( Dim_Date[Year] ),
+        " — All Years"
+    )
+VAR SelectedRegion =
+    IF (
+        HASONEVALUE ( Dim_Geography[Region] ),
+        " | " & SELECTEDVALUE ( Dim_Geography[Region] ),
+        ""
+    )
+RETURN
+    "Retail Sales Executive Dashboard" & SelectedYear & SelectedRegion
+
+Dynamic Date Display =
+"Data through: "
+    & FORMAT ( MAX ( Dim_Date[Date] ), "MMMM DD, YYYY" )
+
+Selected Filters Label =
+VAR Yr =
+    IF ( ISFILTERED ( Dim_Date[Year] ), "Year: " & CONCATENATEX ( VALUES ( Dim_Date[Year] ), Dim_Date[Year], ", " ), "Year: All" )
+VAR Cat =
+    IF (
+        ISFILTERED ( Dim_Product[Product Category] ),
+        " | Category: " & CONCATENATEX ( VALUES ( Dim_Product[Product Category] ), Dim_Product[Product Category], ", " ),
+        " | Category: All"
+    )
+VAR Reg =
+    IF (
+        ISFILTERED ( Dim_Geography[Region] ),
+        " | Region: " & CONCATENATEX ( VALUES ( Dim_Geography[Region] ), Dim_Geography[Region], ", " ),
+        " | Region: All"
+    )
+RETURN
+    Yr & Cat & Reg
+
+/* -------------------------------------------------------------------------- */
+/*  HELPERS FOR PAGE 2 VISUALS                                                */
+/* -------------------------------------------------------------------------- */
+
+Discount Amount =
+SUMX ( Fact_Sales, Fact_Sales[Sales] * Fact_Sales[Discount] / ( 1 - Fact_Sales[Discount] + 0.0001 ) )
+-- Note: Sales is already net of discount. Prefer:
+Total Discount Value =
+SUMX (
+    Fact_Sales,
+    VAR NetSales = Fact_Sales[Sales]
+    VAR Disc = Fact_Sales[Discount]
+    VAR Gross = DIVIDE ( NetSales, 1 - Disc, NetSales )
+    RETURN
+        Gross - NetSales
+)
+
+Shipping Cost Total =
+SUM ( Fact_Sales[Shipping Cost] )
+
+/* -------------------------------------------------------------------------- */
+/*  FUNNEL (uses Dim_Sales_Pipeline standalone table — no relationship needed */
+/*  Create a measure for the funnel values:)                                  */
+/* -------------------------------------------------------------------------- */
+
+Pipeline Value =
+SUM ( Dim_Sales_Pipeline[Pipeline Value] )
